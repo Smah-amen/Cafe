@@ -8,11 +8,12 @@ import React from 'react'
         {/* text */}
         <div className="order-1 sm:order-2 flex flex-col justify-center gap-6">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold ">
+          {/* We are here to provide you with the best */}
             We serve the richest{" "}
-            <span className="text-primary text-4xl font-bold px-2 font-cursive">
+            <span className="text-primary text-5xl font-bold px-2 font-cursive">
               Coffe
             </span>
-            in the City
+             in the City
           </h1>
           <button className="bg-gradient-to-r w-60  from-primary
            to-secondary border-2 border-primary rounded-full px-4 py-2 text-white hover:scale-105 duration-200">
