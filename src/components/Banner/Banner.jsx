@@ -1,4 +1,3 @@
-import React from "react";
 import { GiCoffeePot } from "react-icons/gi";
 import { FaCoffee } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
@@ -6,7 +5,7 @@ import { SiBuymeacoffee } from "react-icons/si";
 const bgImage = {
   backgroundImage: `url('/bg1.jpg')`,
   backgroundSize: "cover",
-  //   backgroundPosition: 'center',
+  // backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   //   height: '100%',
   //   width: '100%',
@@ -15,45 +14,76 @@ const bgImage = {
 const Banner = () => {
   return (
     <div style={bgImage}>
-      <div className="container  flex justify-center items-center py-12 sm:py-0">
-        <div className="grid grid-cols-1 md:grid-cols-2  sm:grid-cols-2 gap-6 ">
+      <div className="container mx-auto py-12 lg:py-0 overflow-hidden">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2"> */}
+        <div className="flex justify-center md:justify-between flex-wrap">
           {/* Image */}
-          <div>
-            <img
-              src="cup3.jpg"
-              alt=""
-              className=" w-[65%]  h-auto  my-14
-             rounded-t-full mx-16 drop-shadow-xl
-             "
-            />
+          <div className="flex justify-center items-center w-[50%]">
+            <div data-aos="zoom-in-up" className="md:px-20 flex justify-center">
+              <img
+                src="cup3.jpg"
+                alt=""
+                className="min-w-64 w-[50%] h-fit my-14 rounded-t-full drop-shadow-xl"
+              />
+            </div>
           </div>
           {/* Text */}
-          <div className="flex flex-col justify-center gap-6 sm:pt-0 ">
-            <h1 className="text-5xl font-cursive font-bold text-primary sm:text-3xl">
-            Premium Coffee Cafe
+          <div className="min-w-80 w-[100%] md:w-[50%] px-5 md:px-0 flex flex-col justify-center gap-6 sm:pt-8 lg:pt-10 xl:pt-0">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              className="text-3xl sm:text-5xl font-cursive font-bold text-primary"
+            >
+              Premium Coffee Cafe
             </h1>
-            <p className="text-lg text-gray-700 tracking-wide leading-4 ">
-              Our mission is to provide quality coffee to our customers
-              We are here to provide you with the best
+            <p
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              className="text-lg text-gray-700 tracking-wide leading-4 "
+            >
+              Our mission is to provide quality coffee to our customers We are
+              here to provide you with the best
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-7">
-                <div className="flex items-center gap-3">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="flex items-center gap-3"
+                >
                   <GiCoffeePot className="text-2xl h-12 w-12 shadow-sm p-3 rounded-full bg-red-100" />
                   <span>Premium Coffee</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="flex items-center gap-3"
+                >
                   <FaCoffee className="text-2xl h-12 w-12 shadow-sm p-3 rounded-full bg-red-100" />
                   <span>Hot Coffee</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  className="flex items-center gap-3"
+                >
                   <SiBuymeacoffee className="text-2xl h-12 w-12 shadow-sm p-3 rounded-full bg-red-100" />
                   <span>Cold Coffee</span>
                 </div>
               </div>
               <div className="border-l-4 border-primary/50 pl-12 space-y-3">
-                <h1 className="text-3xl font-semibold font-cursive text-primary ">Coffee lover </h1>
-                <p className="text-gray-600 text-sm" >
+                <h1
+                  data-aos="fade-left"
+                  data-aos-duration="3000"
+                  className="text-3xl font-semibold font-cursive text-primary "
+                >
+                  Coffee lover{" "}
+                </h1>
+                <p
+                  data-aos-duration="3000"
+                  data-aos="fade-left"
+                  className="text-gray-500 text-sm"
+                >
                   Coffee, the aromatic elixir that kickstarts our mornings,
                   fuels our creativity, and warms our hearts, has a way of
                   weaving itself into the fabric of our lives. It's not just a
