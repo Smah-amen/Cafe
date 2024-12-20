@@ -1,12 +1,12 @@
 const HeaderPage = () => {
   return (
-    <div className="min-h-[550px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white ">
+    <div className="min-h-[550px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white overflow-hidden">
       <div className="container pb-8 sm:pb-0">
         <div className="grid grid-cols-1 sm:grid-cols-2">
           {/* text */}
           <div
             data-aos="fade-zoom-in"
-            className="order-1 sm:order-2 flex flex-col justify-center gap-6"
+            className="order-1 sm:order-0 flex flex-col justify-center gap-6"
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold ">
               {/* We are here to provide you with the best */}
@@ -23,7 +23,7 @@ const HeaderPage = () => {
           {/* image */}
           <div
             data-aos="fade-left"
-            className=" min-h-[450px] flex justify-center items-center order-1 sm:order-2 relative "
+            className=" min-h-[450px] px-5 overflow-hidden flex justify-center items-center order-0 sm:order-1 relative"
           >
             <img
               src="coffe3.png"
