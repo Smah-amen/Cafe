@@ -20,7 +20,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="py-10 bg-gray-100">
+    <div className="pt-10 pb-12 bg-gray-100">
       <div className="container">
         {/* title */}
         <div className="text-center mb-20">
@@ -31,10 +31,15 @@ const Services = () => {
         {/* cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 place-items-center">
           {data.slice(0, 3).map((coffee, index) => (
-            <div data-aos="fade-up" data-aos-delay={index * 100} key={index}>
+            <div
+              data-aos="fade-up"
+              className="mb-8 md:mb-0"
+              data-aos-delay={index * 100}
+              key={index}
+            >
               <div className="rounded-2xl bg-white hover:bg-primary hover:text-white shadow-xl duration-300 max-w-[300px] group relative p-5">
                 {/* Image */}
-                <div className="w-32 h-32 mx-auto -mt-16 mb-5">
+                <div className="w-32 h-32 mx-auto -mt-16 mb-5 rounded-full overflow-hidden">
                   <img
                     src={coffee.image}
                     alt={coffee.title}
