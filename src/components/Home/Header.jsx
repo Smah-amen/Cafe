@@ -4,7 +4,10 @@ const HeaderPage = () => {
       <div className="container pb-8 sm:pb-0">
         <div className="grid grid-cols-1 sm:grid-cols-2">
           {/* text */}
-          <div className="order-1 sm:order-2 flex flex-col justify-center gap-6">
+          <div
+            data-aos="fade-zoom-in"
+            className="order-1 sm:order-2 flex flex-col justify-center gap-6"
+          >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold ">
               {/* We are here to provide you with the best */}
               We serve the richest{" "}
@@ -18,7 +21,10 @@ const HeaderPage = () => {
             </button>
           </div>
           {/* image */}
-          <div className=" min-h-[450px] flex justify-center items-center order-1 sm:order-2 relative ">
+          <div
+            data-aos="fade-left"
+            className=" min-h-[450px] flex justify-center items-center order-1 sm:order-2 relative "
+          >
             <img
               src="coffe3.png"
               // src="coffe3.jpg"
