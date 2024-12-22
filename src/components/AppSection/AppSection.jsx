@@ -17,7 +17,7 @@ const AppSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-8">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-6xl font-bold text-white/90">Our App</h1>
-              <p className="text-xl sm:text-2xl text-center sm:text-left font-semibold text-white/90">
+              <p className="text-xl sm:text-2xl text-center sm:text-left font-semibold text-white/80">
                 Coffee Cafe is available for Android and IOS
               </p>
               <div className="flex flex-wrap justify-center sm:justify-start gap-4">
