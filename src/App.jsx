@@ -7,6 +7,7 @@ import Services from "./components/Servics/Services";
 import Banner from "./components/Banner/Banner";
 import CoffeeCup from "./components/CoffeeCup/CoffeeCup";
 import Testimonials from "./components/Testimonials/Testimonials";
+import AppSection from "./components/AppSection/AppSection";
 const App = () => {
   useEffect(() => {
     Aos.init({
@@ -25,6 +26,7 @@ const App = () => {
       <Services />
       {/* <CoffeeCup/> */}
       <Banner />
+      <AppSection/>
       <Testimonials />
     </div>
   );

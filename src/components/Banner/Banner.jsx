@@ -2,18 +2,18 @@ import { GiCoffeePot } from "react-icons/gi";
 import { FaCoffee } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
 
-const bgImage = {
-  backgroundImage: `url('/bg1.jpg')`,
-  backgroundSize: "cover",
-  // backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  //   height: '100%',
-  //   width: '100%',
-};
+// const bgImage = {
+//   backgroundImage: `url('/bg1.jpg')`,
+//   backgroundSize: "cover",
+//   // backgroundPosition: "center",
+//   backgroundRepeat: "no-repeat",
+//   //   height: '100%',
+//   //   width: '100%',
+// };
 
 const Banner = () => {
   return (
-    <div style={bgImage}>
+    <div >
       <div className="container mx-auto py-12 lg:py-0 overflow-hidden">
         {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2"> */}
         <div className="flex justify-center md:justify-between flex-wrap">

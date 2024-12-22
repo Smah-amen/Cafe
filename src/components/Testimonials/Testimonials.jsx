@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
+import { BiSolidQuoteRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+
 
 function Responsive() {
   var settings = {
@@ -50,12 +53,13 @@ function Responsive() {
       </h1>
       <div className="slider-container w-full">
         <Slider {...settings}>
-          {data.slice(0, 5).map((item, index) => (
+          {data.slice(0, 7).map((item, index) => (
             <div key={item.id || index} className="px-4 pb-4">
               <div className="rounded-xl bg-gray-100 p-5 relative">
         
-                <div className="absolute top-0 right-0 text-black/20 text-5xl font-serif">
-                  ,,
+                <div className="absolute top-0 right-0 text-black/20 text-4xl font-serif">
+                <BiSolidQuoteRight />
+
                 </div>
             
                 <div className="flex justify-center items-center mb-4">
