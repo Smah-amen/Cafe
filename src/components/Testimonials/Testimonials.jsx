@@ -53,7 +53,7 @@ function Responsive() {
       </h1>
       <div className="slider-container w-full">
         <Slider {...settings}>
-          {data.slice(0, 6).map((item, index) => (
+          {data.slice(0, 7).map((item, index) => (
             <div key={item.id || index} className="px-4 pb-4">
               <div className="rounded-xl bg-gray-100 p-5 relative">
         
