@@ -8,11 +8,12 @@ import Banner from "./components/Banner/Banner";
 import CoffeeCup from "./components/CoffeeCup/CoffeeCup";
 import Testimonials from "./components/Testimonials/Testimonials";
 import AppSection from "./components/AppSection/AppSection";
+import Footer from "./components/Footer/Footer";
 const App = () => {
   useEffect(() => {
     Aos.init({
       duration: 1000,
-      once: true,
+      // once: true,
       // mirror: true,
       // easing: 'ease-in-out',
       // delay: 100,
@@ -26,8 +27,9 @@ const App = () => {
       <Services />
       {/* <CoffeeCup/> */}
       <Banner />
-      <AppSection/>
+      <AppSection />
       <Testimonials />
+      <Footer />
     </div>
   );
 };
