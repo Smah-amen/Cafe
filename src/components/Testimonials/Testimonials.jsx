@@ -1,28 +1,31 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
 import { BiSolidQuoteRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
 function Responsive() {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     cssEase: "linear",
     arrows: false,
     pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: true, dots: true },
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
       },
       {
         breakpoint: 630,
@@ -56,26 +59,22 @@ function Responsive() {
           {data.slice(0, 7).map((item, index) => (
             <div key={item.id || index} className="px-4 pb-4">
               <div className="rounded-xl bg-gray-100 p-5 relative">
-        
-                <div className="absolute top-0 right-0 text-black/20 text-4xl font-serif">
-                <BiSolidQuoteRight />
-
+                <div className="absolute top-0 right-0 text-black/5 text-[200px] font-serif">
+                  <BiSolidQuoteRight />
                 </div>
-            
-                <div className="flex justify-center items-center mb-4">
+                <div className="flex justify-start items-center mb-4">
                   <img
                     src={item.image}
                     className="w-24 h-24 rounded-full  "
                     alt={item.title}
                   />
                 </div>
-             
                 <div>
                   <p className="text-xs text-gray-600 mb-3 line-clamp-4 h-12">
                     {item.description}
                   </p>
                   <p className="text-xl font-bold text-black/60 font-cursive">
-                    {item.title }
+                    {item.title}
                   </p>
                 </div>
               </div>
@@ -88,4 +87,3 @@ function Responsive() {
 }
 
 export default Responsive;
-
