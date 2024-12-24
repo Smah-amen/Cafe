@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import HeaderPage from "./components/Home/Header";
 import Menu from "./components/Menu";
+import About from "./components/About";
+import { NotFound } from "./components/NotFound";
 
 const App = () => {
   useEffect(() => {
@@ -23,7 +25,8 @@ const App = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        {/* <Route path="*" element={<h1>404 - Page Not Found</h1>} /> */}
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
       <Footer />
     </div>
