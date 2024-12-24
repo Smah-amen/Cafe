@@ -25,7 +25,7 @@ const App = () => {
       <Navbar />
       <Home />
       <Services />
-      {/* <CoffeeCup/> */}
+      <CoffeeCup />
       <Banner />
       <AppSection />
       <Testimonials />
