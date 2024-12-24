@@ -9,7 +9,7 @@ import AppSection from "./AppSection/AppSection";
 const Home = () => {
   return (
     <>
-      <HeaderPage />
+      {/* <HeaderPage /> */}
       <Services />
       <CoffeeCup />
       <Banner />
