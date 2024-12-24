@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
-import Services from "./components/Servics/Services";
 
 import Footer from "./components/Footer/Footer";
 const App = () => {
@@ -21,7 +20,7 @@ const App = () => {
     <div className="">
       <Navbar />
       <Home />
-      <Services />
+    
     
       <Footer />
     </div>
