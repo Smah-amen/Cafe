@@ -3,32 +3,31 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
-import Services from "./components/Servics/Services";
-import Banner from "./components/Banner/Banner";
-import CoffeeCup from "./components/CoffeeCup/CoffeeCup";
-import Testimonials from "./components/Testimonials/Testimonials";
-import AppSection from "./components/AppSection/AppSection";
+import { Routes, Route } from "react-router-dom";
+
 import Footer from "./components/Footer/Footer";
+import HeaderPage from "./components/Home/Header";
+import Menu from "./components/Menu";
+import About from "./components/About";
+import { NotFound } from "./components/NotFound";
+
 const App = () => {
   useEffect(() => {
     Aos.init({
       duration: 1000,
-      // once: true,
-      // mirror: true,
-      // easing: 'ease-in-out',
-      // delay: 100,
-      // anchorPlacement: 'top-left',
     });
   }, []);
+
   return (
-    <div className="">
+    <div>
       <Navbar />
-      <Home />
-      <Services />
-      <CoffeeCup />
-      <Banner />
-      <AppSection />
-      <Testimonials />
+      <HeaderPage />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound/>} />
+      </Routes>
       <Footer />
     </div>
   );
