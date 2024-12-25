@@ -10,7 +10,7 @@ const Navbar = () => {
        
           <div className="">
             <Link
-              to="/home"
+              to="/"
               className="font-bold text-xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
             >
               <img src="logo.jpg" alt="" className="w-12 rounded-full" />
@@ -22,7 +22,7 @@ const Navbar = () => {
             <ul className="hidden items-center sm:flex gap-4">
               <li>
                 <Link
-                  to="/home"
+                  to="/"
                   className="inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200"
                 >
                   Home
