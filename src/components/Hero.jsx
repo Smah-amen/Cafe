@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 export default function Hero({ name }) {
   return (
     <div
@@ -22,9 +23,12 @@ export default function Hero({ name }) {
             className="inline-flex lg:mb-12 text-xl font-light"
           >
             <p className="m-0 text-white">
-              <a className="text-white" href="">
+              <Link
+                className="text-slate-300/95 hover:text-white duration-300"
+                to={"/"}
+              >
                 Home
-              </a>
+              </Link>
             </p>
             <p className="m-0 text-white px-2">/</p>
             <p className="m-0 text-white capitalize">{name}</p>
