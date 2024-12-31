@@ -23,9 +23,11 @@ useEffect(() => {
 
 
   return (
-    <div>
+    <div >
+    
       {data && data.map((item, id) => (
-        <div key={id}>
+        <div key={id}  className=' bg-brandDark/45' >
+
           <img src={item.image} alt={item.name} className='w-52' />
           <h1>{item.name}</h1>
           <p>{item.description}</p>
