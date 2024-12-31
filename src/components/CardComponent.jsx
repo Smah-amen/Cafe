@@ -29,21 +29,21 @@ const CardComponent = () => {
             className="text-primary uppercase text-2xl font-medium mb-2"
             style={{ letterSpacing: "3px" }}
           >
-            Our Menue & Pricing
+            Our Menu & Pricing
           </h4>
           <h1 className="md:text-5xl text-5xl font-bold mb-4">
             Competitive Pricing
           </h1>
         </div>
       </div>
-      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {data &&
           data.map((item) => (
             <div
               key={item.id}
-              className="flex items-center bg-white p-4 hover:drop-shadow-2xl  w-full max-w-[70%] mx-auto"
+              className="flex items-center bg-white p-4 hover:drop-shadow-2xl rounded-lg w-full max-w-[90%] sm:max-w-full md:max-w-[70%] mx-auto"
             >
-              <div>
+              <div data-aos="fade-right">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -51,7 +51,7 @@ const CardComponent = () => {
                 />
               </div>
 
-              <div className="flex-1 ml-4">
+              <div data-aos="fade-left"  className="flex-1 ml-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   {item.name}
                 </h3>
@@ -60,8 +60,8 @@ const CardComponent = () => {
                 </p>
               </div>
 
-              <div>
-                <span className="text-orange-500 font-bold text-3xl mx-8">
+              <div data-aos="fade-left">
+                <span className="text-orange-500 font-bold text-3xl mx-4">
                   30$
                 </span>
               </div>
