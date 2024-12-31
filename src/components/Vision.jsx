@@ -2,7 +2,7 @@ import { FaCheck } from "react-icons/fa";
 
 export default function Vision() {
   return (
-    <div className="container py-12">
+    <div className="container py-16">
       <div className="">
         <div className="relative pt-28 pb-9 text-center after:absolute after:content-start after:w-[2px] after:h-[100px] after:top-0 after:left-[50%] after:ms[1px] after:bg-[#DA9F5B]">
           <h4
