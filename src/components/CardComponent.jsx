@@ -1,41 +1,75 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
 const CardComponent = () => {
- const [data ,setData] =useState()
+  const [data, setData] = useState();
 
- const fetchData = async () => {
-  try { 
-   const response = await axios.get("https://api.sampleapis.com/coffee/hot")
-    console.log(response.data)  
-   setData(response.data)
-
-    
-  } catch (error) {
-    console.error(error)  
-  }
- }
-useEffect(() => {
-  fetchData()
-}, [])
-
-
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://api.sampleapis.com/coffee/hot");
+      console.log(response.data);
+      setData(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
-    <div >
-    
-      {data && data.map((item, id) => (
-        <div key={id}  className=' bg-brandDark/45' >
-
-          <img src={item.image} alt={item.name} className='w-52' />
-          <h1>{item.name}</h1>
-          <p>{item.description}</p>
+    <div className="p-3">
+      <div className="container py-10">
+        <div
+          data-aos="fade-zoom-in"
+          data-aos-delay="200"
+          className="relative pt-28 pb-9 text-center after:absolute after:content-start after:w-[2px] after:h-[100px] after:top-0 after:left-[50%] after:ms[1px] after:bg-[#DA9F5B]"
+        >
+          <h4
+            className="text-primary uppercase text-2xl font-medium mb-2"
+            style={{ letterSpacing: "3px" }}
+          >
+            Our Menue & Pricing
+          </h4>
+          <h1 className="md:text-5xl text-5xl font-bold mb-4">
+            Competitive Pricing
+          </h1>
         </div>
-      ))}
-      
-    </div>
-  )
-}
+      </div>
+      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+        {data &&
+          data.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center bg-white p-4 hover:drop-shadow-2xl  w-full max-w-[70%] mx-auto"
+            >
+              <div>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-20 h-20 object-cover rounded-full"
+                />
+              </div>
 
-export default CardComponent
+              <div className="flex-1 ml-4">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {item.name}
+                </h3>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+
+              <div>
+                <span className="text-orange-500 font-bold text-3xl mx-8">
+                  30$
+                </span>
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default CardComponent;
