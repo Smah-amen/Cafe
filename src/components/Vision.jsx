@@ -2,9 +2,13 @@ import { FaCheck } from "react-icons/fa";
 
 export default function Vision() {
   return (
-    <div className="container py-16">
+    <div className="container py-16 overflow-hidden">
       <div className="">
-        <div className="relative pt-28 pb-9 text-center after:absolute after:content-start after:w-[2px] after:h-[100px] after:top-0 after:left-[50%] after:ms[1px] after:bg-[#DA9F5B]">
+        <div
+          data-aos="fade-zoom-in"
+          data-aos-delay="200"
+          className="relative pt-28 pb-9 text-center after:absolute after:content-start after:w-[2px] after:h-[100px] after:top-0 after:left-[50%] after:ms[1px] after:bg-[#DA9F5B]"
+        >
           <h4
             className="text-primary uppercase text-2xl font-medium mb-2"
             style={{ letterSpacing: "5px" }}
@@ -16,7 +20,10 @@ export default function Vision() {
           </h1>
         </div>
         <div className="flex flex-wrap md:mx-4">
-          <div className="relative min-w-fit lg:min-w-min w-full flex-grow-0 flex-shrink-0 basis-1/3 max-w-1/3 px-4 py-0 lg:py-12">
+          <div
+            data-aos="fade-right"
+            className="relative min-w-fit lg:min-w-min w-full flex-grow-0 flex-shrink-0 basis-1/3 max-w-1/3 px-4 py-0 lg:py-12"
+          >
             <h1 className="mb-4 text-2xl leading-6 font-bold">Our Story</h1>
             <h5 className="mb-4 text-xl leading-6 font-normal">
               Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet
@@ -35,12 +42,18 @@ export default function Vision() {
               Learn More
             </a>
           </div>
-          <div className=" min-w-fit lg:min-w-min w-full px-4 flex-grow-0 flex-shrink-0 basis-1/3 max-w-1/3 py-12 lg:py-0 min-h-[500px]">
+          <div
+            data-aos="fade-up"
+            className=" min-w-fit lg:min-w-min w-full px-4 flex-grow-0 flex-shrink-0 basis-1/3 max-w-1/3 py-12 lg:py-0 min-h-[500px]"
+          >
             <div className=" w-full h-full">
               <img className=" w-min h-full object-cover" src="/about.png" />
             </div>
           </div>
-          <div className="relative min-w-fit lg:min-w-min w-full px-4 flex-grow-0 flex-shrink-0 basis-1/3 max-w-1/3  col-lg-4 py-0 lg:py-12">
+          <div
+            data-aos="fade-left"
+            className="relative min-w-fit lg:min-w-min w-full px-4 flex-grow-0 flex-shrink-0 basis-1/3 max-w-1/3  col-lg-4 py-0 lg:py-12"
+          >
             <h1 className="mb-4 text-2xl leading-6 font-bold">Our Vision</h1>
             <p className="text-slate-500 mb-3">
               Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
