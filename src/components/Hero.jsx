@@ -10,10 +10,17 @@ export default function Hero({ name }) {
     >
       <div className="">
         <div className="flex flex-col items-center justify-center tracking-widest">
-          <h1 className="md:text-6xl text-4xl font-bold leading-5 mb-4 mt-0 text-white uppercase">
+          <h1
+            data-aos="fade-up"
+            className="md:text-6xl text-4xl font-bold leading-5 mb-4 mt-0 text-white uppercase"
+          >
             {name}
           </h1>
-          <div className="inline-flex lg:mb-12 text-xl font-light">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="inline-flex lg:mb-12 text-xl font-light"
+          >
             <p className="m-0 text-white">
               <a className="text-white" href="">
                 Home
