@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu";
 import About from "./components/About";
 import { NotFound } from "./components/NotFound";
+import { CoffeeDetails } from "./components/CoffeeDetails";
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/about" element={<About />} />
+        <Route path="/CoffeeDetails/:id" element={<CoffeeDetails />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
       <Footer />
