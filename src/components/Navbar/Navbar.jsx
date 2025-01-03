@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaCoffee } from "react-icons/fa";
 
@@ -53,6 +52,18 @@ const Navbar = () => {
                   }
                 >
                   Menu
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `inline-block text-xl py-4 px-4 ${
+                      isActive ? "text-white/100" : "text-white/70"
+                    }  duration-200`
+                  }
+                >
+                  Contact Us
                 </NavLink>
               </li>
             </ul>
