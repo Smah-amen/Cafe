@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu";
 import About from "./components/About";
 import { NotFound } from "./components/NotFound";
+import Contact from "./components/Contact";
 
 const App = () => {
   useEffect(() => {
@@ -25,7 +26,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
