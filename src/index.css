@@ -34,3 +34,8 @@ html {
   bottom: -1px;
   background: url("/overlay-bottom.png");
 }
+
+.overlay-top::before {
+  top: -1px;
+  background: url("/overlay-top.png");
+}
