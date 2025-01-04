@@ -25,6 +25,7 @@ const CoffeeDetails = () => {
 
   return <div>
      <Hero name={"CoffeeDetails"} />
+     <h1>hello</h1>
   </div>;
 };
 
