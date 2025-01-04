@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GiCoffeeBeans } from "react-icons/gi";
+import HeroDetails from "./HeroDetails";
 
 const bgImage = {
   backgroundImage: `url('/back.png')`,
@@ -35,9 +36,11 @@ const CoffeeDetails = () => {
   }
 
   return (
+    <> 
+    <HeroDetails/>
     <div style={bgImage} className=" container mx-auto  py-4 px-4">
       <div className=" grid grid-cols-1 shadow-2xl lg:grid-cols-2 overflow-hidden max-w-7xl mx-auto">
-      {/* Image Section */}
+      
         <div className="   p-2 ">
           <img
             src={data.image}
@@ -46,7 +49,7 @@ const CoffeeDetails = () => {
           />
         </div>
 
-        {/* Details Section */}
+       
         <div className="p-8  flex flex-col justify-between">
           <div>
             <span className="bg-primary text-white py-1 px-4 rounded-full text-base  tracking-wide">
@@ -74,6 +77,7 @@ const CoffeeDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
