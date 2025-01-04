@@ -46,6 +46,7 @@ const CoffeeDetails = () => {
             src={data.image}
             alt={data.title}
             className="rounded-md  w-[500px] h-[500px] "
+            loading="lazy"
           />
         </div>
 
