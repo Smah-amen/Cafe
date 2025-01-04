@@ -11,6 +11,7 @@ import Menu from "./components/Menu";
 import About from "./components/About/About";
 import { NotFound } from "./components/NotFound";
 import Contact from "./components/Contact/Contact";
+import CoffeeDetails from "./components/CoffeeDetails";
 
 const App = () => {
   useEffect(() => {
@@ -27,6 +28,9 @@ const App = () => {
         <Route path="/menu" element={<Menu />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/CoffeeDetails/:id" element={<CoffeeDetails />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
