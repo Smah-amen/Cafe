@@ -8,9 +8,9 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 
 import Menu from "./components/Menu";
-import About from "./components/About";
+import About from "./components/About/About";
 import { NotFound } from "./components/NotFound";
-import Contact from "./components/Contact";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
   useEffect(() => {
