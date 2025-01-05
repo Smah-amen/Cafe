@@ -36,7 +36,7 @@ const HeaderPage = () => {
             className=" min-h-[450px] px-5 overflow-hidden flex justify-center items-center order-0 sm:order-1 relative"
           >
             <img
-              src="coffe3.png"
+              src="/coffe3.png"
               // src="coffe3.jpg"
               alt=""
               className="w-[400px] rounded-full sm:w-[450px] sm:scale-110 
