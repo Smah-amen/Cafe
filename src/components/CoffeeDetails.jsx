@@ -1,7 +1,10 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GiCoffeeBeans } from "react-icons/gi";
+// import HeroDetails from "./HeroDetails";
+import React from "react";
+// import HeaderPage from "./Home/Header";
 import HeroDetails from "./HeroDetails";
 
 const bgImage = {
@@ -37,7 +40,8 @@ const CoffeeDetails = () => {
 
   return (
     <> 
-    <HeroDetails/>
+     {/* <HeaderPage /> */}
+     <HeroDetails/>
     <div style={bgImage} className=" container mx-auto  py-4 px-4">
       <div className=" grid grid-cols-1 shadow-2xl lg:grid-cols-2 overflow-hidden max-w-7xl mx-auto">
       
