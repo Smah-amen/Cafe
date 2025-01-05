@@ -11,7 +11,9 @@ const Navbar = () => {
               to="/"
               className="font-bold text-xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
             >
-              <img src="logo.jpg" alt="Logo" className="w-12 rounded-full" />
+              <img 
+              loading="lazy"
+              src="logo.jpg" alt="" className="w-12 rounded-full" />
               Coffe Cafe
             </NavLink>
           </div>

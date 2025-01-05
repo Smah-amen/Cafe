@@ -45,7 +45,9 @@ const CardComponent = ({id}) => {
       </div>
       {loading ? (
         <div className=" flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit  mx-auto">
-          <img src="loading.jpg" alt="" className="w-full h-full" />
+          <img
+          loading="lazy" 
+          src="loading.jpg" alt="" className="w-full h-full" />
         </div>
       ) : (
         <div
