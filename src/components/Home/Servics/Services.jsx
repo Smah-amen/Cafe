@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "aos/dist/aos.css"; // استيراد مكتبة AOS
+import "aos/dist/aos.css";
 import AOS from "aos";
 
 const Services = () => {
@@ -17,34 +17,30 @@ const Services = () => {
 
   useEffect(() => {
     getData();
-    AOS.init(); // تهيئة مكتبة AOS
+    AOS.init();
   }, []);
 
   return (
     <div className="pt-10 pb-12 bg-gray-100">
       <div className="container">
-        {/* العنوان */}
         <div className="text-center mb-20">
           <h1 className="text-5xl font-cursive font-bold text-center text-primary">
             Best Coffee For You
           </h1>
         </div>
 
-        {/* البطاقات */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 place-items-center">
           {data.slice(0, 4).map((coffee, index) => (
             <div
               key={index}
-              data-aos="fade-up" // الأنيميشن
-              data-aos-delay={index * 100} // تأخير لكل بطاقة
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               className="relativ container mx-auto min-h-[300px] bg-white shadow-lg rounded-lg overflow-hidden max-w-[400px]  duration-300 hover:scale-105 group"
             >
-              {/* شريط الخصم */}
               <div className="absolute top-3 left-3 bg-gold text-white text-lg font-bold px-3 py-1 rounded-md shadow-md">
                 30% OFF
               </div>
 
-              {/* الصورة */}
               <div className="w-full h-65 py-2  overflow-hidden">
                 <img
                   src={coffee.image}
@@ -53,7 +49,6 @@ const Services = () => {
                 />
               </div>
 
-              {/* المحتوى */}
               <div className="p-4 text-center">
                 <h2 className="font-bold text-xl">{coffee.title}</h2>
                 <p className="text-primary text-lg font-bold mt-2">$25</p>
