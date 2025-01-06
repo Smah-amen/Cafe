@@ -16,7 +16,6 @@ const Home = () => {
 {/* <HeaderPage/> */}
       <Services />
       <CoffeeCup />
-     
       <Banner />
       <AppSection />
       <Testimonials />

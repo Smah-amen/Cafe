@@ -34,12 +34,15 @@ const CoffeeSection = () => {
           </a>
         </div>
 
-        <div className="col-span-1">
+        <div className="col-span-1 relative">
           <img
             src="coffee-pct.jpg"
             alt="Coffee Beans"
             className="rounded-lg shadow-lg w-full h-full object-cover"
           />
+        </div>
+        <div className="abalout bottom-50 right-0 bg-red-500 w-60 h-48">
+            <h1>hi</h1>
         </div>
       </div>
     </div>
