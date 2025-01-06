@@ -5,15 +5,18 @@ import CoffeeCup from "./CoffeeCup/CoffeeCup";
 import Testimonials from "./Testimonials/Testimonials";
 import AppSection from "./AppSection/AppSection";
 import HeroDetails from "../HeroDetails";
+import CoffeeSection from "../CoffeeSection";
 // import HeaderPage from "./Header";
 
 const Home = () => {
   return (
     <>
       <HeroDetails />
+      <CoffeeSection/>
 {/* <HeaderPage/> */}
       <Services />
       <CoffeeCup />
+     
       <Banner />
       <AppSection />
       <Testimonials />

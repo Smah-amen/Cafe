@@ -22,13 +22,12 @@ const Services = () => {
   return (
     <div className="pt-10 pb-12 bg-gray-100">
       <div className="container">
-        {/* title */}
         <div className="text-center mb-20">
           <h1 className="text-3xl font-cursive font-bold text-center text-primary">
             Best Coffee For You
           </h1>
         </div>
-        {/* cards */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 place-items-center">
           {data.slice(0, 3).map((coffee, index) => (
             <div
@@ -38,7 +37,6 @@ const Services = () => {
               key={index}
             >
               <div className="rounded-2xl bg-white hover:bg-primary hover:text-white shadow-xl duration-300 max-w-[300px] group relative p-5">
-                {/* Image */}
                 <div className="w-32 h-32 mx-auto -mt-16 mb-5 rounded-full overflow-hidden">
                   <img
                     src={coffee.image}
@@ -46,7 +44,7 @@ const Services = () => {
                     className="w-full h-full rounded-full object-cover group-hover:scale-110 group-hover:rotate-12 duration-300"
                   />
                 </div>
-                {/* Content */}
+
                 <div className="text-center p-1">
                   <h2 className="font-bold text-xl mb-2">{coffee.title}</h2>
                   <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-4">
