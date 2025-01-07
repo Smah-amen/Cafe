@@ -3,6 +3,13 @@ import axios from "axios";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
+
+
+const bgImage = {
+  backgroundImage: `url('/back.png')`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+};
 const Services = () => {
   const [data, setData] = useState([]);
 
@@ -21,10 +28,21 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="pt-10 pb-12 bg-gray-100">
-      <div className="container">
+    <div
+    className="pt-10 pb-12 shadow-md  ">
+      <div
+      
+    // style={bgImage}
+       className="container">
+        <p
+          data-aos="fade-up"
+          data-aos-delay="100"
+         className=" bg-yellow-700 w-[70%] h-1 container mx-auto"></p>
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-cursive font-bold text-center text-primary">
+          <h1 
+          data-aos= "fade-right"
+          data-aos-delay="200"
+          className="text-5xl pt-3 font-cursive font-bold text-center text-primary">
             Best Coffee For You
           </h1>
         </div>
