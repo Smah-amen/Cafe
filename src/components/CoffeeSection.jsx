@@ -13,7 +13,10 @@ const CoffeeSection = () => {
   return (
     <div style={bgImage} className=" pt-10 pb-16 ">
       <div className="container mx-auto max-w-[70%] grid lg:grid-cols-2 md:grid-cols-1 gap-6 px-6">
-        <div className="text-center flex flex-col justify-center col-span-1">
+        <div
+        data-aos="fade-right"
+        data-aos-delay="200"
+         className="text-center flex flex-col justify-center col-span-1">
           <h1 className="text-yellow-600 uppercase text-3xl tracking-wide font-semibold mb-4">
             Who We Are
           </h1>
@@ -38,14 +41,21 @@ const CoffeeSection = () => {
           </a>
         </div>
 
-        <div className="col-span-1 relative">
+        <div
+        data-aos= "fade-left"
+        data-aos-delay="200"
+         className="col-span-1 relative">
           <img
             src="coffee-pct.jpg"
             alt="Coffee Beans"
             className="rounded-lg shadow-lg w-full h-full object-cover"
+
           />
 
-          <div className="lg:absolute lg:bottom-[-5%] lg:left-[-35%] md:grid-cols-1 sm:grid-cols-1 p-3  bg-primary lg:w-[70%] lg:h-36 ">
+          <div
+          data-aos = "fade-up"
+          data-aos-delay="200"
+           className="lg:absolute lg:bottom-[-5%] lg:left-[-35%] md:grid-cols-1 sm:grid-cols-1 p-3  bg-primary lg:w-[70%] lg:h-36 ">
             <h3 className="text-2xl text-center font-semibold text-white mb-4">
               The Best Coffee Services
             </h3>
