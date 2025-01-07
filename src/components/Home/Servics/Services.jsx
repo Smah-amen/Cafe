@@ -29,7 +29,7 @@ const Services = () => {
 
   return (
     <div
-    className="pt-5 pb-10 shadow-md  ">
+    className="pt-20 pb-10 shadow-md  ">
       <div
       
     // style={bgImage}

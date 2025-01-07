@@ -85,7 +85,7 @@ const Banner = () => {
                   data-aos-duration="3000"
                   className="text-3xl font-semibold font-cursive text-primary "
                 >
-                  Coffee lover{" "}
+                  Coffee lover
                 </h1>
                 <p
                   data-aos-duration="3000"
