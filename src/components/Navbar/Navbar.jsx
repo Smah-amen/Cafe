@@ -3,8 +3,9 @@ import { FaCoffee } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="bg-gradient-to-r from-secondary to-secondary text-white">
-      <div className="container py-2">
+    // <div className="bg-secondary/30  text-white  shadow-md rounded-full  absolute top-1 left-1/2 transform -translate-x-1/2 w-[90%] z-10 ">
+    <div className="bg-secondary  text-white   ">
+      <div className="container py-2 ">
         <div className="flex justify-between items-center gap-4">
           <div>
             <NavLink
