@@ -29,22 +29,23 @@ const Services = () => {
 
   return (
     <div
-    className="pt-10 pb-12 shadow-md  ">
+    className="pt-5 pb-10 shadow-md  ">
       <div
       
     // style={bgImage}
        className="container">
-        <p
-          data-aos="fade-up"
-          data-aos-delay="100"
-         className=" bg-yellow-700 w-[70%] h-1 container mx-auto"></p>
-        <div className="text-center mb-20">
+     
+        <div className="text-center mb-14">
           <h1 
           data-aos= "fade-right"
           data-aos-delay="200"
-          className="text-5xl pt-3 font-cursive font-bold text-center text-primary">
+          className="text-6xl pt-3 font-cursive font-bold text-center text-primary">
             Best Coffee For You
           </h1>
+          <p
+          data-aos="fade-up"
+          data-aos-delay="100"
+         className=" bg-yellow-700 w-[35%] h-1 container mx-auto"></p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 place-items-center">

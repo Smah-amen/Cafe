@@ -1,6 +1,7 @@
 import { GiCoffeePot } from "react-icons/gi";
 import { FaCoffee } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
+import vedio from "../../../assets/vadio.mp4";
 
 // const bgImage = {
 //   backgroundImage: `url('/bg1.jpg')`,
@@ -13,18 +14,25 @@ import { SiBuymeacoffee } from "react-icons/si";
 
 const Banner = () => {
   return (
-    <div >
+    <div className="pt-8 pb-10 shadow-md">
       <div className="container mx-auto py-12 lg:py-0 overflow-hidden">
         {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2"> */}
         <div className="flex justify-center md:justify-between flex-wrap">
           {/* Image */}
-          <div className="flex justify-center items-center w-[50%]">
-            <div data-aos="zoom-in-up" className="md:px-20 flex justify-center">
-              <img
+          <div className="flex  items-center w-[50%]">
+            <div data-aos="zoom-in-up" className="md:px-20 flex justify-center  h-[500px] w-[550px]">
+              <video
+                src={vedio}
+                autoPlay
+                loop
+                muted
+                className="w-full h-full object-cover rounded-2xl"
+              ></video>
+              {/* <img
                 src="cup3.jpg"
                 alt=""
                 className="min-w-64 w-[50%] h-fit my-14 rounded-t-full drop-shadow-xl"
-              />
+              /> */}
             </div>
           </div>
           {/* Text */}
@@ -97,7 +105,6 @@ const Banner = () => {
           </div>
         </div>
       </div>
- 
     </div>
   );
 };
