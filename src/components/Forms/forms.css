@@ -1,0 +1,7 @@
+.login::before,
+.login::after {
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+}
