@@ -1,5 +1,5 @@
-.login::before,
-.login::after {
+.modern-login::before,
+.modern-login::after {
   border-top-left-radius: 40%;
   border-top-right-radius: 45%;
   border-bottom-left-radius: 35%;
