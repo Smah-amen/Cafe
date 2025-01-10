@@ -5,8 +5,8 @@ export default function Registeration() {
   const location = useLocation().pathname.split("/")[1];
 
   return (
-    <>
-      <div className="container mx-auto">
+    <div className="overflow-hidden">
+      <div>
         <Forms
           type={location}
           design={Design().default}
@@ -49,6 +49,6 @@ export default function Registeration() {
           }
         />
       </div>
-    </>
+    </div>
   );
 }
