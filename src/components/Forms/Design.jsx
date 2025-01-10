@@ -6,7 +6,11 @@ export default function Design() {
     default: {
       name: "default",
       formWrap: (props) => (
-        <div className="lg:w-2/3 mx-auto my-11">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          className="lg:w-2/3 mx-auto my-11"
+        >
           <div
             style={{
               background:
@@ -18,7 +22,12 @@ export default function Design() {
               <div className="relative px-4 w-full" style={{ flex: "1 1 50%" }}>
                 <div className="text-center p-12">
                   <form className="mb-12">
-                    <h1 className="text-white mb-9 mt-12 font-medium text-4xl capitalize">
+                    <h1
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-duration="1300"
+                      className="text-white mb-9 mt-12 font-medium text-4xl capitalize"
+                    >
                       {props.type}
                     </h1>
                     {props.children}
@@ -47,7 +56,11 @@ export default function Design() {
     modern: {
       name: "modern",
       formWrap: (props) => (
-        <form className="modern-login mx-auto my-20 overflow-hidden bg-slate-200 p-[30px] rounded-xl pt-7 relative transform w-full lg:w-2/3 transition-all duration-300 before:content-[''] before:absolute before:-z-10 after:bg-primary/65 before:bg-[#DA9F5B] before:w-[750px] before:h-[700px] before:left-[55%] before:-top-[10px] after:w-[750px] after:h-[700px] after:left-[45%] after:-top-[5px] after:content-[''] after:absolute after:animate-[spin_7s_infinite] before:animate-[spin_6s_infinite_linear] after:-z-10">
+        <form
+          data-aos="fade-up"
+          data-aos-duration="1300"
+          className="modern-login mx-auto my-16 overflow-hidden bg-slate-200 p-[30px] rounded-xl pt-7 relative transform w-full lg:w-2/3 transition-all duration-300 before:content-[''] before:absolute before:-z-10 after:bg-primary/65 before:bg-[#DA9F5B] before:w-[750px] before:h-[700px] before:left-[55%] before:-top-[10px] after:w-[750px] after:h-[700px] after:left-[45%] after:-top-[5px] after:content-[''] after:absolute after:animate-[spin_7s_infinite] before:animate-[spin_6s_infinite_linear] after:-z-10"
+        >
           <div className="flex items-center justify-between">
             <div className="text-4xl mb-3 capitalize">
               {props.type === "login" ? props.type : "create account"}
