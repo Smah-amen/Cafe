@@ -1,13 +1,64 @@
+import { IoHome } from "react-icons/io5";
+import { Link } from "react-router";
+
 export default function Design() {
   return {
-    default: {},
-    modern: {
-      form: "modern-login mx-auto my-20 overflow-hidden bg-slate-200 p-[30px] rounded-xl pt-7 relative transform w-full lg:w-2/3 transition-all duration-300 before:content-[''] before:absolute before:-z-10 after:bg-primary/65 before:bg-[#DA9F5B] before:w-[750px] before:h-[700px] before:left-[55%] before:-top-[10px] after:w-[750px] after:h-[700px] after:left-[45%] after:-top-[5px] after:content-[''] after:absolute after:animate-[spin_7s_infinite] before:animate-[spin_6s_infinite_linear] after:-z-10",
-      header: {
-        container: "flex items-center justify-between",
-        title: "text-4xl mb-3 capitalize",
-        link: "cursor-pointer text-lg",
+    default: {
+      name: "default",
+      formWrap: (props) => (
+        <div className="lg:w-2/3 mx-auto my-11">
+          <div
+            style={{
+              background:
+                "linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url('/bg-coffee.jpg')",
+            }}
+            className="bg-top bg-no-repeat bg-cover relative overlay-top overlay-bottom w-full overflow-hidden"
+          >
+            <div className="flex flex-wrap -mx-4 items-center">
+              <div className="relative px-4 w-full" style={{ flex: "1 1 50%" }}>
+                <div className="text-center p-12">
+                  <form className="mb-12">
+                    <h1 className="text-white mb-9 mt-12 font-medium text-4xl capitalize">
+                      {props.type}
+                    </h1>
+                    {props.children}
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      inputField: {
+        container: "mb-4 text-white",
+        input:
+          "block w-full text-lg font-normal leading-6 text-white bg-clip-padding bg-transparent border-solid border-[#DA9F5B] outline-none px-5 py-4",
+        inputStyle: { borderWidth: "1px" },
       },
+      navigation: {
+        button:
+          "inline-block font-medium text-center align-middle select-none px-5 py-4 text-base leading-6 w-full bg-[#DA9F5B] capitalize",
+        anotherOtion: {
+          text: "text-white mt-4",
+          link: "underline underline-offset-2 duration-300 hover:text-[#DA9F5B] capitalize",
+        },
+      },
+    },
+    modern: {
+      name: "modern",
+      formWrap: (props) => (
+        <form className="modern-login mx-auto my-20 overflow-hidden bg-slate-200 p-[30px] rounded-xl pt-7 relative transform w-full lg:w-2/3 transition-all duration-300 before:content-[''] before:absolute before:-z-10 after:bg-primary/65 before:bg-[#DA9F5B] before:w-[750px] before:h-[700px] before:left-[55%] before:-top-[10px] after:w-[750px] after:h-[700px] after:left-[45%] after:-top-[5px] after:content-[''] after:absolute after:animate-[spin_7s_infinite] before:animate-[spin_6s_infinite_linear] after:-z-10">
+          <div className="flex items-center justify-between">
+            <div className="text-4xl mb-3 capitalize">
+              {props.type === "login" ? props.type : "create account"}
+            </div>
+            <Link to={"/"}>
+              <IoHome className="cursor-pointer text-lg" />
+            </Link>
+          </div>
+          {props.children}
+        </form>
+      ),
       inputField: {
         container: "flex flex-col-reverse",
         input:
