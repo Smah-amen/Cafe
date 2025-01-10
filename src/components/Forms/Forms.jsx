@@ -8,7 +8,13 @@ export default function Forms({ type, items, design }) {
       {type === "login" ? (
         <design.formWrap type={type}>
           {items.map((item, index) => (
-            <div key={index} className={design?.inputField?.container}>
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={500 * (index + 1.8)}
+              data-aos-duration={1100 + (index + 1)}
+              className={design?.inputField?.container}
+            >
               <input
                 type={item?.type}
                 className={design?.inputField?.input}
@@ -21,11 +27,22 @@ export default function Forms({ type, items, design }) {
               )}
             </div>
           ))}
-          <div>
-            <button className={design?.navigation?.button} type="submit">
+          <div className={design?.navigation?.container}>
+            <button
+              data-aos="fade-up"
+              data-aos-delay="1700"
+              data-aos-duration="1000"
+              className={design?.navigation?.button}
+              type="submit"
+            >
               {type}
             </button>
-            <div className={design?.navigation?.anotherOtion?.text}>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="1900"
+              data-aos-duration="900"
+              className={design?.navigation?.anotherOtion?.text}
+            >
               Don&apos;t have an account,{" "}
               <Link
                 className={design?.navigation?.anotherOtion?.link}
@@ -35,7 +52,12 @@ export default function Forms({ type, items, design }) {
               </Link>
             </div>
             {design.name === "default" && (
-              <div className="mt-5">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="2000"
+                data-aos-duration="800"
+                className="mt-5"
+              >
                 <Link
                   to={"/"}
                   className="underline underline-offset-2 duration-300 text-white hover:text-[#DA9F5B] capitalize"
@@ -49,7 +71,13 @@ export default function Forms({ type, items, design }) {
       ) : (
         <design.formWrap type={type}>
           {items.map((item, index) => (
-            <div key={index} className={design?.inputField?.container}>
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={500 * (index + 2)}
+              data-aos-duration={1300 + (index + 1)}
+              className={design?.inputField?.container}
+            >
               <input
                 placeholder={item?.placeholder}
                 className={design?.inputField?.input}
@@ -61,7 +89,12 @@ export default function Forms({ type, items, design }) {
               )}
             </div>
           ))}
-          <div className={design?.navigation?.container}>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="2800"
+            data-aos-duration="1300"
+            className={design?.navigation?.container}
+          >
             <button className={design?.navigation?.button}>sign up</button>
             <div className={design?.navigation?.anotherOtion?.text}>
               Already have an account,{" "}
