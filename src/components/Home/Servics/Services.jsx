@@ -3,13 +3,6 @@ import axios from "axios";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-
-
-const bgImage = {
-  backgroundImage: `url('/back.png')`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-};
 const Services = () => {
   const [data, setData] = useState([]);
 
@@ -28,49 +21,62 @@ const Services = () => {
   }, []);
 
   return (
-    <div
-    className="pt-20 pb-10 shadow-md  ">
-      <div
-      
-    // style={bgImage}
-       className="container">
-     
+    <div className="pt-20 pb-10  ">
+      <div className="container mx-auto">
         <div className="text-center mb-14">
-          <h1 
-          data-aos= "fade-right"
-          data-aos-delay="200"
-          className="text-6xl pt-3 font-cursive font-bold text-center text-primary">
+          <h1
+            data-aos="fade-right"
+            data-aos-delay="200"
+            className="text-6xl pt-3 font-cursive font-bold text-center text-primary"
+          >
             Best Coffee For You
           </h1>
           <p
-          data-aos="fade-up"
-          data-aos-delay="100"
-         className=" bg-yellow-700 w-[35%] h-1 container mx-auto"></p>
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="bg-yellow-700 w-[35%] h-1 container mx-auto"
+          ></p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 place-items-center">
-          {data.slice(0, 4).map((coffee, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          {data.slice(0, 6).map((coffee, index) => (
             <div
               key={index}
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-delay={index * 100}
-              className="relativ container mx-auto min-h-[300px] bg-white shadow-lg rounded-lg overflow-hidden max-w-[400px]  duration-300 hover:scale-105 group"
+              className="max-w-[420px] bg-white  overflow-hidden group"
             >
-              <div className="absolute top-3 left-3 bg-gold text-white text-lg font-bold px-3 py-1 rounded-md shadow-md">
-                30% OFF
+              
+              <div className="absolute top-2 left-2 bg-yellow-600 text-white text-sm font-bold px-2 py-1 rounded-md">
+                50% off - $2.50
               </div>
 
-              <div className="w-full h-65 py-2  overflow-hidden">
-                <img
-                  src={coffee.image}
-                  alt={coffee.title}
-                  className=" object-cover rounded-md group-hover:scale-110 duration-300"
-                />
-              </div>
+         
+              <img
+                src={coffee.image}
+                alt={coffee.title}
+                className="w-full h-[320px] object-cover rounded-t-lg group-hover:scale-105 duration-300"
+              />
 
+           
               <div className="p-4 text-center">
-                <h2 className="font-bold text-xl">{coffee.title}</h2>
-                <p className="text-primary text-lg font-bold mt-2">$25</p>
+                <div className="flex justify-between items-center"> 
+                <h2 className="text-xl text-primary font-bold mb-2">{coffee.title}</h2>
+                <p className="text-primary text-lg font-bold">
+                  $5.00
+                </p>
+                </div>
+                <p className="text-gray-600 mb-4 line-clamp-3 ">
+                {coffee.description}
+                </p>
+                <div className="flex justify-start gap-3 items-start">  
+                <button className="bg-primary text-white px-4 py-2 rounded-full">
+                  Order Now
+                </button>
+                <button className="bg-primary text-white px-4 py-2 rounded-full">
+                  Details
+                </button>
+                </div>
               </div>
             </div>
           ))}

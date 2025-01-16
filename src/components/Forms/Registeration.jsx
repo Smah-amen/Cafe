@@ -9,7 +9,7 @@ export default function Registeration() {
       <div>
         <Forms
           type={location}
-          design={Design().default}
+          design={Design().modern}
           items={
             location === "signup"
               ? [
