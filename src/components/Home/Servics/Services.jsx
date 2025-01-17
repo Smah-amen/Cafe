@@ -46,36 +46,33 @@ const Services = () => {
               data-aos-delay={index * 100}
               className="max-w-[420px] bg-white  overflow-hidden group"
             >
-              
-              <div className="absolute top-2 left-2 bg-yellow-600 text-white text-sm font-bold px-2 py-1 rounded-md">
+              <div className="absolute top-2 left-2 bg-green-600 text-white text-sm font-bold px-2 py-1 rounded-full">
                 50% off - $2.50
               </div>
 
-         
               <img
                 src={coffee.image}
                 alt={coffee.title}
-                className="w-full h-[320px] object-cover rounded-t-lg group-hover:scale-105 duration-300"
+                className="w-full h-[320px] border-4 border-slate-100 shadow-md rounded-xl  object-cover  group-hover:scale-105 duration-300"
               />
 
-           
               <div className="p-4 text-center">
-                <div className="flex justify-between items-center"> 
-                <h2 className="text-xl text-primary font-bold mb-2">{coffee.title}</h2>
-                <p className="text-primary text-lg font-bold">
-                  $5.00
-                </p>
+                <div className="flex justify-between items-center">
+                  <h2 className="text-xl text-primary font-bold mb-2">
+                    {coffee.title}
+                  </h2>
+                  <p className="text-primary text-lg font-bold">$5.00</p>
                 </div>
                 <p className="text-gray-600 mb-4 line-clamp-3 ">
-                {coffee.description}
+                  {coffee.description}
                 </p>
-                <div className="flex justify-start gap-3 items-start">  
-                <button className="bg-primary text-white px-4 py-2 rounded-full">
-                  Order Now
-                </button>
-                <button className="bg-primary text-white px-4 py-2 rounded-full">
-                  Details
-                </button>
+                <div className="flex justify-start gap-3 items-start">
+                  <button className="bg-primary text-white px-4 py-2 rounded-full">
+                    Order Now
+                  </button>
+                  <button className="bg-primary text-white px-4 py-2 rounded-full">
+                    Details
+                  </button>
                 </div>
               </div>
             </div>
