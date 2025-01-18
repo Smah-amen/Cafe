@@ -5,11 +5,15 @@ import AOS from "aos";
 
 const Services = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
       const resp = await axios.get("https://api.sampleapis.com/coffee/hot");
       setData(resp.data);
+      console.log(resp.data);
+      setLoading(false);
+      
     } catch (err) {
       setData([{ title: "Error", image: "error-image.jpg" }]);
     }
@@ -17,7 +21,9 @@ const Services = () => {
 
   useEffect(() => {
     getData();
+    setLoading(true);
     AOS.init();
+
   }, []);
 
   return (
@@ -38,6 +44,14 @@ const Services = () => {
           ></p>
         </div>
 
+        {loading ? (
+        <div className=" flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit  mx-auto">
+          <img
+          loading="lazy" 
+          src="loading.jpg" alt="" className="w-full h-full" />
+        </div>
+      ) :(
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {data.slice(0, 6).map((coffee, index) => (
             <div
@@ -53,7 +67,7 @@ const Services = () => {
               <img
                 src={coffee.image}
                 alt={coffee.title}
-                className="w-full h-[320px] border-4 border-slate-100 shadow-md rounded-xl  object-cover  group-hover:scale-105 duration-300"
+                className="w-full h-[350px] border-4 border-slate-100 shadow-md rounded-xl  object-cover  group-hover:scale-105 duration-300"
               />
 
               <div className="p-4 text-center">
@@ -78,6 +92,7 @@ const Services = () => {
             </div>
           ))}
         </div>
+)}
       </div>
     </div>
   );
