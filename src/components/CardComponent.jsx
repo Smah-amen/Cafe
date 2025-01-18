@@ -10,7 +10,7 @@ const CardComponent = ({id}) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://api.sampleapis.com/coffee/hot");
+      const response = await axios.get("https://api.sampleapis.com/coffee/iced");
       console.log(response.data);
       setData(response.data);
       setLoading(false);
