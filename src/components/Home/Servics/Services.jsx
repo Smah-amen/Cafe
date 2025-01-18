@@ -67,7 +67,7 @@ const Services = () => {
               <img
                 src={coffee.image}
                 alt={coffee.title}
-                className="w-full h-[320px] border-4 border-slate-100 shadow-md rounded-xl  object-cover  group-hover:scale-105 duration-300"
+                className="w-full h-[350px] border-4 border-slate-100 shadow-md rounded-xl  object-cover  group-hover:scale-105 duration-300"
               />
 
               <div className="p-4 text-center">
