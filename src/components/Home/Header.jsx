@@ -37,10 +37,10 @@ const HeaderPage = () => {
           >
             <img
               src="/coffe3.png"
-              // src="coffe3.jpg"
+            
               alt=""
-              className="w-[400px] rounded-full sm:w-[450px] sm:scale-110 
-            mx-auto spin  "
+              className="w-[400px] rounded-full sm:w-[450px] 
+            mx-auto spin"
             />
             <div className="text-primary font-semibold text-2xl font-cursive  absolute py-2 top-10 left-14 p-3 px-1 rounded-xl ">
               <h1> Welcome </h1>
