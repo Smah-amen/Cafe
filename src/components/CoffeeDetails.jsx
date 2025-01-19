@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GiCoffeeBeans } from "react-icons/gi";
 import React from "react";
+
+import Hero from "./Hero.jsx";
 // import HeroDetails from "./HeroDetails";
-import HeaderPage from "./Home/Header";
+// import HeaderPage from "./Home/Header";
 
 const bgImage = {
   backgroundImage: `url('/back.png')`,
@@ -36,6 +38,7 @@ const CoffeeDetails = () => {
 
   return (
     <>
+    <Hero/>
       {loading ? (
         <div className="flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit mx-auto">
           <img
@@ -47,7 +50,8 @@ const CoffeeDetails = () => {
         </div>
       ) : (
         <div>
-          <HeaderPage/>
+
+          {/* <HeaderPage/> */}
           {/* <HeroDetails /> */}
           <div style={bgImage} className="container mx-auto py-4 px-4">
             <div className="grid grid-cols-1 shadow-2xl lg:grid-cols-2 overflow-hidden max-w-7xl mx-auto">

@@ -33,15 +33,15 @@ const Services = () => {
           <h1
             data-aos="fade-right"
             data-aos-delay="200"
-            className="text-6xl pt-3 font-cursive font-bold text-center text-primary"
+            className="text-6xl pt-3 font-cursive font-bold text-center text-primary "
           >
             Best Coffee For You
           </h1>
-          <p
+          {/* <p
             data-aos="fade-up"
             data-aos-delay="100"
             className="bg-yellow-700 w-[35%] h-1 container mx-auto"
-          ></p>
+          ></p> */}
         </div>
 
         {loading ? (

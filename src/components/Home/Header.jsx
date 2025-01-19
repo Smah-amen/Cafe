@@ -10,7 +10,7 @@ const HeaderPage = () => {
   }, []);
 
   return (
-    <div className="min-h-[550px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white overflow-hidden">
+    <div className="min-h-[450px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white overflow-hidden">
       <div className="container pb-8 sm:pb-0">
         <div className="grid grid-cols-1 sm:grid-cols-2">
           {/* text */}
@@ -37,10 +37,10 @@ const HeaderPage = () => {
           >
             <img
               src="/coffe3.png"
-              // src="coffe3.jpg"
+            
               alt=""
-              className="w-[400px] rounded-full sm:w-[450px] sm:scale-110 
-            mx-auto spin  "
+              className="w-[400px] rounded-full sm:w-[450px] 
+            mx-auto spin"
             />
             <div className="text-primary font-semibold text-2xl font-cursive  absolute py-2 top-10 left-14 p-3 px-1 rounded-xl ">
               <h1> Welcome </h1>

@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 const HeroDetails = () => {
   return (
-    <div className="relative w-full h-[680px] overflow-hidden">
+    <div className="relative w-full h-[700px] overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
         <video
           src={vedio}
@@ -20,7 +20,7 @@ const HeroDetails = () => {
         data-aos-delay="200"
         className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4"
       >
-        <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+        <h1 className="text-4xl lg:text-5xl font-cursive font-bold mb-4">
           Discover the Perfect Coffee
         </h1>
         <p className="text-lg lg:text-xl mb-6">

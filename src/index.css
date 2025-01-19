@@ -18,6 +18,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-color: #6e4d4a;
 }
 
 .overlay-top::before,

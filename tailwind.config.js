@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        
         sans: ["Inter", "system-ui", "Arial", "sans-serif"],
-        cursive:["Fleur De Leah" ]
+        cursive:["Dancing Script", "serif" ]
     
       },
       colors: {
