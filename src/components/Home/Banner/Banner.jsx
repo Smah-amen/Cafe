@@ -14,29 +14,23 @@ import vedio from "../../../assets/vadio.mp4";
 
 const Banner = () => {
   return (
-    <div className="pt-8 pb-10 shadow-md">
-      <div className="container mx-auto py-12 lg:py-0 overflow-hidden">
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2"> */}
-        <div className="flex justify-center md:justify-between flex-wrap">
+    <div className=" bg-[#d4ccca]">
+      <div className="overflow-hidden">
+        <div className="container mx-auto   grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
+        {/* <div className="flex justify-center md:justify-between flex-wrap"> */}
           {/* Image */}
           <div className="flex  items-center w-[50%]">
             <div data-aos="zoom-in-up" className="md:px-20 flex justify-center  h-[500px] w-[550px]">
-              <video
-                src={vedio}
-                autoPlay
-                loop
-                muted
-                className="w-full h-full object-cover rounded-2xl"
-              ></video>
-              {/* <img
-                src="cup3.jpg"
+             
+              <img
+                src="coffee_bag2.png"
                 alt=""
                 className="min-w-64 w-[50%] h-fit my-14 rounded-t-full drop-shadow-xl"
-              /> */}
+              />
             </div>
           </div>
           {/* Text */}
-          <div className="min-w-80 w-[100%] md:w-[50%] px-5 md:px-0 flex flex-col justify-center gap-6 sm:pt-8 lg:pt-10 xl:pt-0">
+          <div className="px-5 md:px-0 flex flex-col justify-center gap-6 sm:pt-8 lg:pt-10 xl:pt-0">
             <h1
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -103,7 +97,8 @@ const Banner = () => {
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
+      </div>
       </div>
     </div>
   );
