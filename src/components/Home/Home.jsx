@@ -6,14 +6,14 @@ import Testimonials from "./Testimonials/Testimonials";
 import AppSection from "./AppSection/AppSection";
 import HeroDetails from "../HeroDetails";
 import CoffeeSection from "../CoffeeSection";
-// import HeaderPage from "./Header";
+import HeaderPage from "./Header";
 
 const Home = () => {
   return (
     <>
       <HeroDetails />
       <CoffeeSection />
-      {/* <HeaderPage/> */}
+      <HeaderPage/>
       {/* <CoffeeCup /> */}
 
       <Banner />

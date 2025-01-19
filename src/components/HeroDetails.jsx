@@ -20,7 +20,7 @@ const HeroDetails = () => {
         data-aos-delay="200"
         className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4"
       >
-        <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+        <h1 className="text-4xl lg:text-5xl font-cursive font-bold mb-4">
           Discover the Perfect Coffee
         </h1>
         <p className="text-lg lg:text-xl mb-6">

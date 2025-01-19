@@ -1,107 +1,83 @@
 import { GiCoffeePot } from "react-icons/gi";
 import { FaCoffee } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
-import vedio from "../../../assets/vadio.mp4";
-
-// const bgImage = {
-//   backgroundImage: `url('/bg1.jpg')`,
-//   backgroundSize: "cover",
-//   // backgroundPosition: "center",
-//   backgroundRepeat: "no-repeat",
-//   //   height: '100%',
-//   //   width: '100%',
-// };
 
 const Banner = () => {
   return (
-    <div className=" bg-[#d4ccca]">
-      <div className="overflow-hidden">
-        <div className="container mx-auto   grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
-        {/* <div className="flex justify-center md:justify-between flex-wrap"> */}
-          {/* Image */}
-          <div className="flex  items-center w-[50%]">
-            <div data-aos="zoom-in-up" className="md:px-20 flex justify-center  h-[500px] w-[550px]">
-             
-              <img
-                src="coffee_bag2.png"
-                alt=""
-                className="min-w-64 w-[50%] h-fit my-14 rounded-t-full drop-shadow-xl"
-              />
-            </div>
+    <div className="">
+      <div className="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Image Section */}
+        <div className="flex justify-center ">
+          <div
+            data-aos="zoom-in-up"
+            className="w-[80%] lg:w-[60%] h-auto relative"
+          >
+            <img
+              src="coffee_bag2.png"
+              alt="Coffee Bag"
+              className="rounded-t-full  w-full"
+            />
           </div>
-          {/* Text */}
-          <div className="px-5 md:px-0 flex flex-col justify-center gap-6 sm:pt-8 lg:pt-10 xl:pt-0">
+        </div>
+
+        <div className="space-y-8">
             <h1
-              data-aos="fade-up"
-              data-aos-duration="3000"
-              className="text-3xl sm:text-5xl font-cursive font-bold text-primary"
+              data-aos="fade-right"
+              className="text-4xl sm:text-5xl font-cursive font-bold text-primary text-center lg:text-left"
             >
-              Premium Coffee Cafe
+              Experience the Art of Coffee
             </h1>
             <p
-              data-aos="fade-up"
-              data-aos-duration="3000"
-              className="text-lg text-gray-700 tracking-wide leading-4 "
+              data-aos="fade-right"
+              className="text-gray-700 text-lg leading-relaxed text-center lg:text-left"
             >
-              Our mission is to provide quality coffee to our customers We are
-              here to provide you with the best
+              Indulge in the rich flavors and aroma of premium coffee crafted
+              with passion. Whether you prefer it hot, cold, or brewed to
+              perfection, we have something to satisfy every coffee lover.
             </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-7">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="3000"
-                  className="flex items-center gap-3"
-                >
-                  <GiCoffeePot className="text-2xl h-12 w-12 shadow-sm p-3 rounded-full bg-red-100" />
-                  <span>Premium Coffee</span>
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="3000"
-                  className="flex items-center gap-3"
-                >
-                  <FaCoffee className="text-2xl h-12 w-12 shadow-sm p-3 rounded-full bg-red-100" />
-                  <span>Hot Coffee</span>
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="3000"
-                  className="flex items-center gap-3"
-                >
-                  <SiBuymeacoffee className="text-2xl h-12 w-12 shadow-sm p-3 rounded-full bg-red-100" />
-                  <span>Cold Coffee</span>
-                </div>
-              </div>
-              <div className="border-l-4 border-primary/50 pl-12 space-y-3">
-                <h1
-                  data-aos="fade-left"
-                  data-aos-duration="3000"
-                  className="text-3xl font-semibold font-cursive text-primary "
-                >
-                  Coffee lover
-                </h1>
-                <p
-                  data-aos-duration="3000"
-                  data-aos="fade-left"
-                  className="text-gray-500 text-sm"
-                >
-                  Coffee, the aromatic elixir that kickstarts our mornings,
-                  fuels our creativity, and warms our hearts, has a way of
-                  weaving itself into the fabric of our lives. It's not just a
-                  beverage; it's a companion that accompanies us through life's
-                  highs and lows. Coffee lovers understand that it's more than
-                  just a cup of joe; it's a source of comfort, inspiration and
-                  connection.
-                </p>
-              </div>
+
+            <div
+              data-aos="fade-up"
+              className="bg-[#f8f4f2] p-6 rounded-lg shadow-md"
+            >
+              <h2 className="text-2xl font-semibold text-primary mb-4">
+                Coffee for Every Mood
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Coffee isn't just a drink; it's an experience. Explore the
+                comforting embrace of a warm cup, the energizing kick of a cold
+                brew, or the joy of sharing a coffee moment with loved ones.
+              </p>
             </div>
-          </div>
-        {/* </div> */}
-      </div>
+
+            {/* <div
+              data-aos="fade-up"
+              className="bg-[#f8f4f2] p-6 rounded-lg shadow-md"
+            >
+              <h2 className="text-2xl font-semibold text-primary mb-4">
+                Coffee for Every Mood
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Coffee isn't just a drink; it's an experience. Explore the
+                comforting embrace of a warm cup, the energizing kick of a cold
+                brew, or the joy of sharing a coffee moment with loved ones.
+              </p>
+            </div> */}
+
+            <div className="flex justify-center lg:justify-start gap-4 mt-6">
+              <button className="bg-primary text-white px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-90">
+                Learn More
+              </button>
+              <button className="bg-gray-200 text-primary px-6 py-3 rounded-lg shadow-lg hover:bg-gray-300">
+                Explore Menu
+              </button>
+            </div>
+          
+        </div>
       </div>
     </div>
   );
 };
 
 export default Banner;
+
