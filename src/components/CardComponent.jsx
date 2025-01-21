@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
-const CardComponent = ({id}) => {
+const CardComponent = ({ id }) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -11,7 +10,6 @@ const CardComponent = ({id}) => {
   const fetchData = async () => {
     try {
       const response = await axios.get("https://api.sampleapis.com/coffee/hot");
-      console.log(response.data);
       setData(response.data);
       setLoading(false);
     } catch (error) {
@@ -46,19 +44,20 @@ const CardComponent = ({id}) => {
       {loading ? (
         <div className=" flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit  mx-auto">
           <img
-          loading="lazy" 
-          src="loading.jpg" alt="" className="w-full h-full" />
+            loading="lazy"
+            src="loading.jpg"
+            alt=""
+            className="w-full h-full"
+          />
         </div>
       ) : (
-        <div
-        
-         className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {data &&
             data.map((item) => (
               <div
-              onClick={() => {
-                navigate(`/CoffeeDetails/${item.id}`);
-              }}
+                onClick={() => {
+                  navigate(`/CoffeeDetails/${item.id}`);
+                }}
                 key={item.id}
                 className="flex items-center cursor-pointer bg-white p-4 hover:drop-shadow-2xl rounded-lg w-full max-w-[90%] sm:max-w-full md:max-w-[70%] mx-auto"
               >
