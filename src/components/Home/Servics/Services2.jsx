@@ -7,7 +7,6 @@ const Services2 = () => {
   const getData = async () => {
     try {
       const resp = await axios.get("https://api.sampleapis.com/coffee/hot");
-      console.log(resp.data);
 
       setData(resp.data);
     } catch (err) {
