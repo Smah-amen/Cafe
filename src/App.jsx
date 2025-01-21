@@ -18,10 +18,12 @@ const App = () => {
   const [bold, setBold] = useState(false);
   useEffect(() => {
     Aos.init({
+      once: true,
       duration: 1000,
     });
   }, []);
   useEffect(() => {
+    scrollTo(0, 0);
     location.pathname === "/login" || location.pathname === "/signup"
       ? setBold(false)
       : setBold(true);
