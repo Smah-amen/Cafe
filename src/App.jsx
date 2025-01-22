@@ -4,14 +4,16 @@ import "aos/dist/aos.css";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import { Routes, Route, useLocation } from "react-router-dom";
-
+import { gsap } from "gsap";
 import Footer from "./components/Footer/Footer";
 import Registration from "./components/Forms/Registeration";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu/Menu";
 import About from "./components/About/About";
 import { NotFound } from "./components/NotFound";
 import Contact from "./components/Contact/Contact";
-import CoffeeDetails from "./components/CoffeeDetails";
+import CoffeeDetails from "./components/Menu/CoffeeDetails";
+import Transition from "./components/PageTransition/Transition";
+import { revealTransition } from "./components/PageTransition/Animation";
 
 const App = () => {
   const location = useLocation();
@@ -23,13 +25,19 @@ const App = () => {
     });
   }, []);
   useEffect(() => {
+    revealTransition().then(() => {
+      gsap.set(".ptr-block", { visibility: "hidden" });
+    });
+
     scrollTo(0, 0);
     location.pathname === "/login" || location.pathname === "/signup"
       ? setBold(false)
       : setBold(true);
   }, [location.pathname]);
+
   return (
-    <div className="">
+    <>
+      <Transition />
       {bold && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -42,7 +50,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       {bold && <Footer />}
-    </div>
+    </>
   );
 };
 
