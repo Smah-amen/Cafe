@@ -1,5 +1,6 @@
-import { Link } from "react-router";
-export default function Hero({ name }) {
+/* eslint-disable react/prop-types */
+import CustomLink from "./CustomLink";
+export default function Hero({ name, prevRoute }) {
   return (
     <div
       style={{
@@ -22,15 +23,31 @@ export default function Hero({ name }) {
             data-aos-delay="200"
             className="inline-flex lg:mb-12 text-xl font-light"
           >
-            <p className="m-0 text-white">
-              <Link
-                className="text-slate-300/95 hover:text-white duration-300"
-                to={"/"}
-              >
-                Home
-              </Link>
-            </p>
-            <p className="m-0 text-white px-2">/</p>
+            {prevRoute ? (
+              prevRoute.map((item, index) => (
+                <div className="flex flex-wrap" key={index}>
+                  <div className="m-0 text-white">
+                    <CustomLink
+                      className="capitalize text-slate-300/95 hover:text-white duration-300"
+                      to={item.route}
+                    >
+                      {item.name}
+                    </CustomLink>
+                  </div>
+                  <p className="m-0 text-white px-2">/</p>
+                </div>
+              ))
+            ) : (
+              <>
+                <CustomLink
+                  className="capitalize text-slate-300/95 hover:text-white duration-300"
+                  to={"/"}
+                >
+                  home
+                </CustomLink>
+                <p className="m-0 text-white px-2">/</p>
+              </>
+            )}
             <p className="m-0 text-white capitalize">{name}</p>
           </div>
         </div>
