@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router";
 import "./forms.css";
+import CustomLink from "../CustomLink";
 
 export default function Forms({ type, items, design }) {
   return (
@@ -44,12 +45,12 @@ export default function Forms({ type, items, design }) {
               className={design?.navigation?.anotherOtion?.text}
             >
               Don&apos;t have an account,{" "}
-              <Link
+              <CustomLink
                 className={design?.navigation?.anotherOtion?.link}
                 to={"/signup"}
               >
                 sign up
-              </Link>
+              </CustomLink>
             </div>
             {design.name === "default" && (
               <div
@@ -58,12 +59,12 @@ export default function Forms({ type, items, design }) {
                 data-aos-duration="800"
                 className="mt-5"
               >
-                <Link
+                <CustomLink
                   to={"/"}
                   className="underline underline-offset-2 duration-300 text-white hover:text-[#DA9F5B] capitalize"
                 >
                   back to home
-                </Link>
+                </CustomLink>
               </div>
             )}
           </div>
@@ -98,21 +99,21 @@ export default function Forms({ type, items, design }) {
             <button className={design?.navigation?.button}>sign up</button>
             <div className={design?.navigation?.anotherOtion?.text}>
               Already have an account,{" "}
-              <Link
+              <CustomLink
                 className={design?.navigation?.anotherOtion?.link}
                 to={"/login"}
               >
                 login
-              </Link>
+              </CustomLink>
             </div>
             {design.name === "default" && (
               <div className="mt-5">
-                <Link
+                <CustomLink
                   to={"/"}
                   className="underline underline-offset-2 duration-300 text-white hover:text-[#DA9F5B] capitalize"
                 >
                   back to home
-                </Link>
+                </CustomLink>
               </div>
             )}
           </div>
