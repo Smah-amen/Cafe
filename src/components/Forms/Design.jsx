@@ -1,5 +1,5 @@
 import { IoHome } from "react-icons/io5";
-import { Link } from "react-router";
+import CustomLink from "../CustomLink";
 
 export default function Design() {
   return {
@@ -49,7 +49,7 @@ export default function Design() {
           "inline-block font-medium text-center align-middle select-none px-5 py-4 text-base leading-6 w-full bg-[#DA9F5B] capitalize",
         anotherOtion: {
           text: "text-white mt-4",
-          link: "underline underline-offset-2 duration-300 hover:text-[#DA9F5B] capitalize",
+          link: "inline-block underline underline-offset-2 duration-300 hover:text-[#DA9F5B] capitalize",
         },
       },
     },
@@ -65,9 +65,9 @@ export default function Design() {
             <div className="text-4xl mb-3 capitalize">
               {props.type === "login" ? props.type : "create account"}
             </div>
-            <Link to={"/"}>
+            <CustomLink to={"/"}>
               <IoHome className="cursor-pointer text-lg" />
-            </Link>
+            </CustomLink>
           </div>
           {props.children}
         </form>
@@ -85,7 +85,7 @@ export default function Design() {
           "cursor-pointer text-white text-lg uppercase w-fit px-5 border-0 py-[10px] mt-[30px] rounded-md bg-secondary transition-all duration-300 hover:bg-primary",
         anotherOtion: {
           text: "text-black text-end text-pretty mt-[30px]",
-          link: "border-b-[1px] border-b-black duration-300 hover:border-b-white capitalize",
+          link: "inline-block border-b-[1px] border-b-black duration-300 hover:border-b-white capitalize",
         },
       },
     },
