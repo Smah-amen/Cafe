@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaCoffee } from "react-icons/fa";
+import CustomLink from "../CustomLink";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
       <div className="container py-2">
         <div className="flex justify-between items-center gap-4">
           <div>
-            <NavLink
+            <CustomLink
               to="/"
               className="font-bold text-xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
             >
@@ -19,67 +20,59 @@ const Navbar = () => {
                 className="w-12 rounded-full"
               />
               Coffe Cafe
-            </NavLink>
+            </CustomLink>
           </div>
 
           <div className="flex justify-between items-center gap-4">
             <ul className="hidden items-center sm:flex gap-4">
               <li>
-                <NavLink
+                <CustomLink
                   to="/"
-                  className={({ isActive }) =>
-                    `inline-block text-xl py-4 px-4 ${
-                      isActive ? "text-white/100" : "text-white/70"
-                    } duration-200`
-                  }
+                  className="inline-block text-xl py-4 px-4 duration-200"
+                  isActive="text-white/100"
+                  isNotActive="text-white/70"
                 >
                   Home
-                </NavLink>
+                </CustomLink>
               </li>
               <li>
-                <NavLink
+                <CustomLink
                   to="/about"
-                  className={({ isActive }) =>
-                    `inline-block text-xl py-4 px-4 ${
-                      isActive ? "text-white/100" : "text-white/70"
-                    }  duration-200`
-                  }
+                  className="inline-block text-xl py-4 px-4 duration-200"
+                  isActive="text-white/100"
+                  isNotActive="text-white/70"
                 >
                   About
-                </NavLink>
+                </CustomLink>
               </li>
               <li>
-                <NavLink
+                <CustomLink
                   to="/menu"
-                  className={({ isActive }) =>
-                    `inline-block text-xl py-4 px-4 ${
-                      isActive ? "text-white/100" : "text-white/70"
-                    }  duration-200`
-                  }
+                  className="inline-block text-xl py-4 px-4 duration-200"
+                  isActive="text-white/100"
+                  isNotActive="text-white/70"
                 >
                   Menu
-                </NavLink>
+                </CustomLink>
               </li>
               <li>
-                <NavLink
+                <CustomLink
                   to="/contact"
-                  className={({ isActive }) =>
-                    `inline-block text-xl py-4 px-4 ${
-                      isActive ? "text-white/100" : "text-white/70"
-                    }  duration-200`
-                  }
+                  className="inline-block text-xl py-4 px-4 duration-200"
+                  isActive="text-white/100"
+                  isNotActive="text-white/70"
                 >
                   Contact Us
-                </NavLink>
+                </CustomLink>
               </li>
             </ul>
             {/* Check on the local storage to find tokin */}
-            <Link to="/login">
+            <CustomLink to="/login">
               <button className="bg-primary/100 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3">
                 Order
                 <FaCoffee className="text-xl cursor-pointer" />
               </button>
-            </Link>
+            </CustomLink>
           </div>
         </div>
       </div>
