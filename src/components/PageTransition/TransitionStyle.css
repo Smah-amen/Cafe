@@ -1,0 +1,6 @@
+.pt-row-0 .ptr-block {
+  transform-origin: top;
+}
+.pt-row-1 .ptr-block {
+  transform-origin: bottom;
+}
