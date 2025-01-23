@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import CustomLink from "./CustomLink";
+import { FaCoffee } from "react-icons/fa";
+
 
 export const NotFound = () => {
   useEffect(() => {
@@ -15,12 +18,14 @@ export const NotFound = () => {
           data-aos="fade-zoom-in"
         >
           {/* الرقم 4 الأول */}
-          <h1 className="text-9xl sm:text-6xl lg:text-9xl font-bold px-20">4</h1>
+          <h1 className="text-9xl sm:text-6xl lg:text-[250px] font-bold px-20">
+            4
+          </h1>
 
           {/* الصورة */}
           <div
             data-aos="fade-left"
-            className="relative w-[150px] sm:w-[200px] lg:w-[250px] flex justify-center items-center"
+            className="relative w-[150px] sm:w-[200px] lg:w-[370px] flex justify-center items-center"
           >
             <img
               src="/coffe3.png"
@@ -30,20 +35,30 @@ export const NotFound = () => {
           </div>
 
           {/* الرقم 4 الثاني */}
-          <h1 className="text-5xl sm:text-6xl lg:text-9xl font-bold px-20">4</h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-[250px] font-bold px-20">
+            4
+          </h1>
         </div>
 
         {/* النص التوضيحي */}
         <div
           data-aos="fade-up"
-          className="mt-6 text-center text-xl sm:text-2xl lg:text-3xl"
+          className="mt-20 text-center text-xl sm:text-2xl lg:text-3xl"
         >
+          <p>Oops! The page you're looking for isn't available</p>
           <p>
-            Oops! The page you're looking for isn't available. Enjoy a cup of{" "}
+            Enjoy a cup of
             <span className="text-primary font-cursive">Coffee</span> while
-            browsing.
           </p>
+
+      
         </div>
+        <CustomLink to="/login">
+            <button className="bg-primary/100 px-4 py-2 mt-10 rounded-full hover:scale-105 duration-200 flex items-center gap-3">
+              Order Now
+              <FaCoffee className="text-xl cursor-pointer" />
+            </button>
+          </CustomLink>
       </div>
     </div>
   );
