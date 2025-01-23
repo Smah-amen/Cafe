@@ -4,7 +4,6 @@ import "aos/dist/aos.css";
 import CustomLink from "./CustomLink";
 import { FaCoffee } from "react-icons/fa";
 
-
 export const NotFound = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -17,12 +16,10 @@ export const NotFound = () => {
           className="flex items-center justify-center gap-6"
           data-aos="fade-zoom-in"
         >
-          {/* الرقم 4 الأول */}
           <h1 className="text-9xl sm:text-6xl lg:text-[250px] font-bold px-20">
             4
           </h1>
 
-          {/* الصورة */}
           <div
             data-aos="fade-left"
             className="relative w-[150px] sm:w-[200px] lg:w-[370px] flex justify-center items-center"
@@ -34,13 +31,11 @@ export const NotFound = () => {
             />
           </div>
 
-          {/* الرقم 4 الثاني */}
           <h1 className="text-5xl sm:text-6xl lg:text-[250px] font-bold px-20">
             4
           </h1>
         </div>
 
-        {/* النص التوضيحي */}
         <div
           data-aos="fade-up"
           className="mt-20 text-center text-xl sm:text-2xl lg:text-3xl"
@@ -50,15 +45,13 @@ export const NotFound = () => {
             Enjoy a cup of
             <span className="text-primary font-cursive">Coffee</span> while
           </p>
-
-      
         </div>
         <CustomLink to="/menu">
-            <button className="bg-primary/100 px-4 py-2 mt-10 rounded-full hover:scale-105 duration-200 flex items-center gap-3">
-              Order Now
-              <FaCoffee className="text-xl cursor-pointer" />
-            </button>
-          </CustomLink>
+          <button className="bg-primary/100 px-4 py-2 mt-10 rounded-full hover:scale-105 duration-200 flex items-center gap-3">
+            Order Now
+            <FaCoffee className="text-xl cursor-pointer" />
+          </button>
+        </CustomLink>
       </div>
     </div>
   );
