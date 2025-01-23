@@ -1,52 +1,48 @@
-import React from "react";
-useEffect(() => {
-  Aos.init({
-    duration: 1000,
-  });
-}, []);
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 export const NotFound = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
-    <div className="min-h-[450px] sm:min-h-[600px] bg-brandDark flex justify-center items-center text-white overflow-hidden">
-      <div className="container pb-8 sm:pb-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-          {/* text */}
-          <div
-            data-aos="fade-zoom-in"
-            className="order-1 sm:order-0 flex flex-col justify-center gap-6"
-          >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold ">
-              {/* We are here to provide you with the best */}
-              We serve the richest{" "}
-              <span className="text-primary text-5xl font-bold px-2 font-cursive">
-                Coffe
-              </span>
-              in the City
-            </h1>
-            <button className="bg-gradient-to-r w-60  from-primary to-secondary border-2 border-primary rounded-full px-4 py-2 text-white hover:scale-105 duration-200">
-              Coffe now
-            </button>
-          </div>
-          {/* image */}
+    <div className="min-h-screen bg-brandDark flex justify-center items-center text-white overflow-hidden">
+      <div className="flex flex-col items-center">
+        <div
+          className="flex items-center justify-center gap-6"
+          data-aos="fade-zoom-in"
+        >
+          {/* الرقم 4 الأول */}
+          <h1 className="text-9xl sm:text-6xl lg:text-9xl font-bold px-20">4</h1>
+
+          {/* الصورة */}
           <div
             data-aos="fade-left"
-            className=" min-h-[450px] px-5 overflow-hidden flex justify-center items-center order-0 sm:order-1 relative"
+            className="relative w-[150px] sm:w-[200px] lg:w-[250px] flex justify-center items-center"
           >
             <img
               src="/coffe3.png"
-              alt=""
-              className="w-[400px] rounded-full sm:w-[450px] 
-          mx-auto spin"
+              alt="Coffee"
+              className="w-full rounded-full spin"
             />
-            <div className="text-primary font-semibold text-2xl font-cursive  absolute py-2 top-10 left-14 p-3 px-1 rounded-xl ">
-              <h1> Welcome </h1>
-            </div>
-            <div
-              className=" text-primary font-semibold text-2xl
-        absolute bottom-10 right-0  py-2 px-0 font-cursive "
-            >
-              <h1> Enjoy your Coffee </h1>
-            </div>
           </div>
+
+          {/* الرقم 4 الثاني */}
+          <h1 className="text-5xl sm:text-6xl lg:text-9xl font-bold px-20">4</h1>
+        </div>
+
+        {/* النص التوضيحي */}
+        <div
+          data-aos="fade-up"
+          className="mt-6 text-center text-xl sm:text-2xl lg:text-3xl"
+        >
+          <p>
+            Oops! The page you're looking for isn't available. Enjoy a cup of{" "}
+            <span className="text-primary font-cursive">Coffee</span> while
+            browsing.
+          </p>
         </div>
       </div>
     </div>
