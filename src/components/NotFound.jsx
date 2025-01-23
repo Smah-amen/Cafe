@@ -53,7 +53,7 @@ export const NotFound = () => {
 
       
         </div>
-        <CustomLink to="/login">
+        <CustomLink to="/menu">
             <button className="bg-primary/100 px-4 py-2 mt-10 rounded-full hover:scale-105 duration-200 flex items-center gap-3">
               Order Now
               <FaCoffee className="text-xl cursor-pointer" />
