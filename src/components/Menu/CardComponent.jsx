@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import CustomLink from "../CustomLink";
 
-const CardComponent = ({ id }) => {
-  const [data, setData] = useState();
+const CardComponent = () => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   const fetchData = async () => {
     try {
@@ -22,9 +23,15 @@ const CardComponent = ({ id }) => {
     fetchData();
   }, []);
 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentData = data.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
   return (
     <div className="p-3">
-      <div className="container py-10  overflow-hidden">
+      <div className="container py-10 overflow-hidden">
         <div
           data-aos="fade-zoom-in"
           data-aos-delay="200"
@@ -42,7 +49,7 @@ const CardComponent = ({ id }) => {
         </div>
       </div>
       {loading ? (
-        <div className=" flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit  mx-auto">
+        <div className="flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit mx-auto">
           <img
             loading="lazy"
             src="loading.jpg"
@@ -51,9 +58,9 @@ const CardComponent = ({ id }) => {
           />
         </div>
       ) : (
-        <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {data &&
-            data.map((item) => (
+        <div>
+          <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {currentData.map((item) => (
               <CustomLink
                 key={item.id}
                 to={`/CoffeeDetails/${item.id}`}
@@ -83,6 +90,23 @@ const CardComponent = ({ id }) => {
                 </div>
               </CustomLink>
             ))}
+          </div>
+
+          <div className="flex justify-center mt-6">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`px-4 py-2 mx-2 ${
+                  currentPage === index + 1
+                    ? "bg-primary text-white"
+                    : "bg-gray-300"
+                } rounded`}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
