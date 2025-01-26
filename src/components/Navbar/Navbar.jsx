@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FaCoffee, FaBars, FaTimes } from "react-icons/fa";
+import { FaCoffee, FaTimes } from "react-icons/fa";
+import { CgMenuOreos } from "react-icons/cg";
+
 import CustomLink from "../CustomLink";
 
 const Navbar = () => {
@@ -67,21 +69,22 @@ const Navbar = () => {
             </li>
           </ul>
 
+          <CustomLink to="/login">
+            <button className=" bg-primary/100 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 font-cursive ">
+              Order
+              <FaCoffee className="text-2xl cursor-pointer" />
+            </button>
+          </CustomLink>
+
           <div className="sm:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-2xl focus:outline-none"
             >
-              {isMenuOpen ? <FaTimes /> : <FaBars />}
+              {isMenuOpen ? <FaTimes /> : <CgMenuOreos />}
             </button>
           </div>
 
-          <CustomLink to="/login">
-            <button className="bg-primary/100 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 font-cursive ">
-              Order
-              <FaCoffee className="text-2xl cursor-pointer" />
-            </button>
-          </CustomLink>
         </div>
 
         {isMenuOpen && (
@@ -131,6 +134,7 @@ const Navbar = () => {
               </CustomLink>
             </li>
           </ul>
+          
         )}
       </div>
     </div>
