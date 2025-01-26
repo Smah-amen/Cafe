@@ -11,7 +11,7 @@ export default function Transition() {
           {item.map((item, index) => (
             <div
               key={index}
-              className="ptr-block flex-1 bg-[#a37745] scale-y-[1] will-change-transform"
+              className="ptr-block flex-1 bg-[#cab193] scale-y-[1] will-change-transform"
             ></div>
           ))}
         </div>
