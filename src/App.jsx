@@ -14,6 +14,7 @@ import Contact from "./components/Contact/Contact";
 import CoffeeDetails from "./components/Menu/CoffeeDetails";
 import Transition from "./components/PageTransition/Transition";
 import { revealTransition } from "./components/PageTransition/Animation";
+import Cart from "./components/checkout/Cart";
 
 const App = () => {
   const location = useLocation();
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Registration />} />
         <Route path="/signup" element={<Registration />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/CoffeeDetails/:id" element={<CoffeeDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
