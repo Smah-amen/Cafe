@@ -7,13 +7,14 @@ import AppSection from "./AppSection/AppSection";
 import HeroDetails from "../HeroDetails";
 import CoffeeSection from "../CoffeeSection";
 import HeaderPage from "./Header";
+import Services2 from "./Servics/Services2";
 
 const Home = () => {
   return (
     <>
       <HeroDetails />
       <CoffeeSection />
-      <HeaderPage/>
+      <HeaderPage />
       {/* <CoffeeCup /> */}
 
       <Banner />
