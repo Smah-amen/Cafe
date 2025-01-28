@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import jsonData from "../../Data/Data.json";
 
 const Services2 = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
     try {
-      const resp = await axios.get("https://api.sampleapis.com/coffee/hot");
+      // const resp = await axios.get("../../Data/Data.json");
 
-      setData(resp.data);
+      setData(jsonData);
     } catch (err) {
       setData([{ title: "Error", description: err.message }]);
     }
