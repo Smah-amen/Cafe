@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { BsDash } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
@@ -7,14 +7,13 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Hero from "../Hero";
 import CustomLink from "../CustomLink";
 
-
 // const bgImage = {
 //   backgroundImage: `url('/bg1-cart.jpg')`,
 //   backgroundSize: "cover",
 //   backgroundRepeat: "no-repeat",
 //   backgroundBlendMode: "screen",
 //   backgroundPosition: "center",
-//   backgroundColor: "rgba(0, 0, 0, 0.3)", 
+//   backgroundColor: "rgba(0, 0, 0, 0.3)",
 // };
 
 const Cart = () => {
@@ -35,7 +34,7 @@ const Cart = () => {
 
   return (
     <div>
-      <Hero name={"your order" }/>
+      <Hero name={"your order"} />
       <section class="bg-white py-8  md:py-16">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
           {/* <h2 class="text-xl font-semibold text-orange-800/100 font-mono  sm:text-2xl">
@@ -44,12 +43,11 @@ const Cart = () => {
 
           <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-              <div
-              
-              class="space-y-6">
-                <div 
-                // style={bgImage } 
-                className="rounded-lg p-4 shadow-sm  md:p-6">
+              <div class="space-y-6">
+                <div
+                  // style={bgImage }
+                  className="rounded-lg p-4 shadow-sm  md:p-6"
+                >
                   <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <a href="#" class="shrink-0 md:order-1">
                       {/* <img class="h-20 w-20 dark:hidden" src="coffe1" alt="imac image" /> */}
@@ -168,16 +166,16 @@ const Cart = () => {
 
                   <div class="flex items-center justify-center gap-2 ">
                     <CustomLink to="/menu">
-                    <a
-                      href="#"
-                      title=""
-                      class="inline-flex items-center  text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
-                    >
-                      Continue Shopping
-                      <span className="m-2  mb-0">
-                        <HiOutlineArrowNarrowRight size={25} />
-                      </span>
-                    </a>
+                      <a
+                        href="#"
+                        title=""
+                        class="inline-flex items-center  text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
+                      >
+                        Continue Shopping
+                        <span className="m-2  mb-0">
+                          <HiOutlineArrowNarrowRight size={25} />
+                        </span>
+                      </a>
                     </CustomLink>
                   </div>
                 </div>
