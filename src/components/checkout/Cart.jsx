@@ -4,9 +4,10 @@ import { BsDash } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 import Responsive from "../Home/Testimonials/Testimonials";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import Hero from "../Hero";
 
 const Cart = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const increment = () => {
     setCount(count + 1);
@@ -23,6 +24,7 @@ const Cart = () => {
 
   return (
     <div>
+      <Hero name={"your order" }/>
       <section class="bg-white py-8  md:py-16">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <h2 class="text-xl font-semibold text-orange-800/100 font-mono  sm:text-2xl">
