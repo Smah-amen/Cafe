@@ -7,6 +7,16 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Hero from "../Hero";
 import CustomLink from "../CustomLink";
 
+
+// const bgImage = {
+//   backgroundImage: `url('/bg1-cart.jpg')`,
+//   backgroundSize: "cover",
+//   backgroundRepeat: "no-repeat",
+//   backgroundBlendMode: "screen",
+//   backgroundPosition: "center",
+//   backgroundColor: "rgba(0, 0, 0, 0.3)", 
+// };
+
 const Cart = () => {
   const [count, setCount] = useState(1);
 
@@ -34,8 +44,12 @@ const Cart = () => {
 
           <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-              <div class="space-y-6">
-                <div className="rounded-lg p-4 shadow-sm bg-brandDark md:p-6">
+              <div
+              
+              class="space-y-6">
+                <div 
+                // style={bgImage } 
+                className="rounded-lg p-4 shadow-sm  md:p-6">
                   <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <a href="#" class="shrink-0 md:order-1">
                       {/* <img class="h-20 w-20 dark:hidden" src="coffe1" alt="imac image" /> */}
