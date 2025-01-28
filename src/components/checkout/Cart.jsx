@@ -5,6 +5,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import Responsive from "../Home/Testimonials/Testimonials";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Hero from "../Hero";
+import CustomLink from "../CustomLink";
 
 const Cart = () => {
   const [count, setCount] = useState(1);
@@ -152,6 +153,7 @@ const Cart = () => {
                   </p>
 
                   <div class="flex items-center justify-center gap-2 ">
+                    <CustomLink to="/menu">
                     <a
                       href="#"
                       title=""
@@ -162,6 +164,7 @@ const Cart = () => {
                         <HiOutlineArrowNarrowRight size={25} />
                       </span>
                     </a>
+                    </CustomLink>
                   </div>
                 </div>
               </div>
