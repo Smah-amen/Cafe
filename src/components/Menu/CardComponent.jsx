@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CustomLink from "../CustomLink";
+import jsonData from "../Data/Data.json";
 
 const CardComponent = () => {
   const [data, setData] = useState([]);
@@ -10,8 +11,8 @@ const CardComponent = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://api.sampleapis.com/coffee/hot");
-      setData(response.data);
+      // const response = await axios.get("https://api.sampleapis.com/coffee/hot");
+      setData(jsonData);
       setLoading(false);
     } catch (error) {
       console.error(error);
