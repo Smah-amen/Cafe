@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { GiCoffeeBeans } from "react-icons/gi";
-
+import jsonData from "../Data/Data.json";
 import Hero from "../Hero.jsx";
 import { animateTransition } from "../PageTransition/Animation.jsx";
 // import HeroDetails from "./HeroDetails";
@@ -22,10 +22,10 @@ const CoffeeDetails = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        `https://api.sampleapis.com/coffee/hot/${id}`
-      );
-      setData(response.data);
+      const response = jsonData.filter((item) => item.id == id);
+
+      setData(...response);
+
       setLoading(false);
     } catch (error) {
       console.error("Error fetching coffee data:", error);
@@ -38,7 +38,7 @@ const CoffeeDetails = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
     fetchData();
   }, [id]);
 
