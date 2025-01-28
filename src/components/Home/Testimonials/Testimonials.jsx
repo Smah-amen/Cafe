@@ -4,6 +4,7 @@ import axios from "axios";
 import { BiSolidQuoteRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import jsonData from "../../Data/Data.json";
 
 function Responsive() {
   var settings = {
@@ -38,8 +39,7 @@ function Responsive() {
 
   const getData = async () => {
     try {
-      const resp = await axios.get("https://api.sampleapis.com/coffee/hot");
-      setData(resp.data);
+      setData(jsonData);
     } catch (err) {
       setData([{ title: "Error", description: err.message }]);
     }
