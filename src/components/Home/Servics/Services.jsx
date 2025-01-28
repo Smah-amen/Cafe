@@ -2,15 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "aos/dist/aos.css";
 import AOS from "aos";
-
+import jsonData from "../../Data/Data.json";
 const Services = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
-      const resp = await axios.get("https://api.sampleapis.com/coffee/hot");
-      setData(resp.data);
+      // const resp = await axios.get("../../Data/Data.json");
+      // console.log(resp.data);
+      // console.log(datas);
+
+      setData(jsonData);
       setLoading(false);
     } catch (err) {
       setData([{ title: "Error", image: "error-image.jpg" }]);
@@ -19,7 +22,7 @@ const Services = () => {
 
   useEffect(() => {
     getData();
-    setLoading(true);
+    // setLoading(true);
     AOS.init();
   }, []);
 
