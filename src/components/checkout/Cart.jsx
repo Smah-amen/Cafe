@@ -6,6 +6,7 @@ import Responsive from "../Home/Testimonials/Testimonials";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Hero from "../Hero";
 import CustomLink from "../CustomLink";
+import { useParams } from "react-router";
 
 // const bgImage = {
 //   backgroundImage: `url('/bg1-cart.jpg')`,
@@ -18,6 +19,7 @@ import CustomLink from "../CustomLink";
 
 const Cart = () => {
   const [count, setCount] = useState(1);
+  const id = useParams
 
   const increment = () => {
     setCount(count + 1);
