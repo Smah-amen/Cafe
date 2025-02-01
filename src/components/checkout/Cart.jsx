@@ -13,7 +13,6 @@ import jsonData from "../Data/Data.json";
 const Cart = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [count, setCount] = useState(1);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +21,7 @@ const Cart = () => {
     const fetchData = async () => {
       try {
         const response = jsonData.filter((item) => item.id === parseInt(id));
-        setData(response.length > 0 ? response : []);
+        setData(response );
         setLoading(false);
       } catch (error) {
         console.error("Error fetching coffee data:", error);
