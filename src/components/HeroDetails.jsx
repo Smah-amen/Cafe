@@ -2,6 +2,8 @@ import React from "react";
 import vedio from "../assets/vadio.mp4";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import CustomLink from "./CustomLink";
+import Menu from "./Menu/Menu";
 const HeroDetails = () => {
   return (
     <div className="relative w-full h-[700px] overflow-hidden">
@@ -26,11 +28,13 @@ const HeroDetails = () => {
         <p className="text-lg lg:text-xl mb-6">
           Explore the rich flavors freshly brewed coffee.
         </p>
+        <CustomLink to= "Menu" > 
         <button
         data-aos="fade-up"
          className="bg-primary text-white py-2 px-6 rounded-full text-lg transition">
           Shop Now
         </button>
+        </CustomLink>
       </div>
     </div>
   );

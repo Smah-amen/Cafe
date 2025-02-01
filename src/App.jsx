@@ -46,7 +46,7 @@ const App = () => {
     { noNavBar: false, path: "/menu", element: <Menu /> },
     { noNavBar: false, path: "/about", element: <About /> },
     { noNavBar: false, path: "/contact", element: <Contact /> },
-    { noNavBar: false, path: "/cart", element: <Cart /> },
+    { noNavBar: false, path: "/cart/:id", element: <Cart /> },
     { noNavBar: false, path: "/CoffeeDetails/:id", element: <CoffeeDetails /> },
     { noNavBar: true, path: "/login", element: <Registration /> },
     { noNavBar: true, path: "/signup", element: <Registration /> },
