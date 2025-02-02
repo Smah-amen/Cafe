@@ -29,28 +29,19 @@ const App = () => {
     revealTransition().then(() => {
       gsap.set(".ptr-block", { visibility: "hidden" });
     });
-
     scrollTo(0, 0);
-    setBold(
-      routes.find((route) =>
-        route.path === location.pathname ? route : route.path == "*"
-      )?.noNavBar
-    );
-    // routes.map((route) => {
-    //   route.path === location.pathname && route.noNavBar && setBold(true);
-    // });
   }, [location.pathname]);
 
   const routes = [
-    { noNavBar: false, path: "/", element: <Home /> },
-    { noNavBar: false, path: "/menu", element: <Menu /> },
-    { noNavBar: false, path: "/about", element: <About /> },
-    { noNavBar: false, path: "/contact", element: <Contact /> },
-    { noNavBar: false, path: "/cart", element: <Cart /> },
-    { noNavBar: false, path: "/CoffeeDetails/:id", element: <CoffeeDetails /> },
-    { noNavBar: true, path: "/login", element: <Registration /> },
-    { noNavBar: true, path: "/signup", element: <Registration /> },
-    { noNavBar: true, path: "*", element: <NotFound /> },
+    { noNavBar: false, path: "/", element: Home },
+    { noNavBar: false, path: "/menu", element: Menu },
+    { noNavBar: false, path: "/about", element: About },
+    { noNavBar: false, path: "/contact", element: Contact },
+    { noNavBar: false, path: "/cart", element: Cart },
+    { noNavBar: false, path: "/CoffeeDetails/:id", element: CoffeeDetails },
+    { noNavBar: true, path: "/login", element: Registration },
+    { noNavBar: true, path: "/signup", element: Registration },
+    { noNavBar: true, path: "*", element: NotFound },
   ];
 
   return (
@@ -59,16 +50,14 @@ const App = () => {
       {!bold && <Navbar />}
       <Routes>
         {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <route.element noNavBar={route.noNavBar} setBold={setBold} />
+            }
+          />
         ))}
-        {/* <Route path="/menu" element={<Menu />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Registration />} />
-        <Route path="/signup" element={<Registration />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/CoffeeDetails/:id" element={<CoffeeDetails />} />
-        <Route path="*" element={<NotFound />} /> */}
       </Routes>
       {!bold && <Footer />}
     </>
