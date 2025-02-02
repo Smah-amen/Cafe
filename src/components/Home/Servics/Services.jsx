@@ -3,6 +3,8 @@ import axios from "axios";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import jsonData from "../../Data/Data.json";
+import CustomLink from "../../CustomLink";
+import CoffeeDetails from "../../Menu/CoffeeDetails";
 const Services = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -83,12 +85,16 @@ const Services = () => {
                     {coffee.description}
                   </p>
                   <div className="flex justify-start gap-3 items-start">
+                    <CustomLink to={`/cart/${coffee.id}`} > 
                     <button className="bg-primary text-white px-4 py-2 rounded-full">
                       Order Now
                     </button>
+                    </CustomLink>
+                    <CustomLink to={ `/coffeeDetails/${coffee.id} `} > 
                     <button className="bg-primary text-white px-4 py-2 rounded-full">
                       Details
                     </button>
+                    </CustomLink>
                   </div>
                 </div>
               </div>
