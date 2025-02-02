@@ -1,8 +1,12 @@
 import "aos/dist/aos.css";
 import CustomLink from "./CustomLink";
 import { FaCoffee } from "react-icons/fa";
+import { useEffect } from "react";
 
-export const NotFound = () => {
+export const NotFound = ({ setBold, noNavBar }) => {
+  useEffect(() => {
+    setBold(noNavBar);
+  });
   return (
     <div className="min-h-screen bg-brandDark flex justify-center items-center text-white overflow-hidden px-4">
       <div className="flex flex-col items-center">
