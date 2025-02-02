@@ -4,7 +4,7 @@ import axios from "axios";
 import { BiSolidQuoteRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import jsonData from "../../Data/Data.json";
+import jsonData from "../../Data/testimonials.json";
 
 function Responsive() {
   var settings = {
@@ -64,18 +64,24 @@ function Responsive() {
                 </div>
                 <div className="flex justify-start items-center mb-4">
                   <img
-                    src={item.image}
+                    src={item.avatar}
                     className="w-24 h-24 rounded-full  "
-                    alt={item.title}
+                    alt={item.full_name}
                   />
                 </div>
                 <div>
+                  <p className="text-xs text-gray-600 mb-1">{item.test_name}</p>
                   <p className="text-xs text-gray-600 mb-3 line-clamp-4 h-12">
-                    {item.description}
+                    {item.test_body}
                   </p>
-                  <p className="text-xl font-bold text-black/60 font-cursive">
-                    {item.title}
-                  </p>
+                  <div className="flex items-center justify-between flex-wrap">
+                    <p className="text-2xl font-bold text-black/60 font-cursive">
+                      {item.full_name}
+                    </p>
+                    <p className="text-base font-semibold text-black/60">
+                      {item.email}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
