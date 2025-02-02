@@ -1,8 +1,12 @@
 import { useLocation } from "react-router";
 import Forms from "./Forms";
 import Design from "./Design";
-export default function Registeration() {
+import { useEffect } from "react";
+export default function Registeration({ setBold, noNavBar }) {
   const location = useLocation().pathname.split("/")[1];
+  useEffect(() => {
+    setBold(noNavBar);
+  });
 
   return (
     <div className="overflow-hidden">
