@@ -1,12 +1,9 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { GiCoffeeBeans } from "react-icons/gi";
 import jsonData from "../Data/Data.json";
 import Hero from "../Hero.jsx";
 import { animateTransition } from "../PageTransition/Animation.jsx";
-// import HeroDetails from "./HeroDetails";
-// import HeaderPage from "./Home/Header";
 
 const bgImage = {
   backgroundImage: `url('/back.png')`,
@@ -14,31 +11,31 @@ const bgImage = {
   backgroundRepeat: "no-repeat",
 };
 
-const CoffeeDetails = () => {
+const CoffeeDetails = ({ setBold, noNavBar }) => {
   const { id } = useParams();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const fetchData = async () => {
-    try {
-      const response = jsonData.filter((item) => item.id == id);
-
-      setData(...response);
-
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching coffee data:", error);
-      setTimeout(() => {
-        animateTransition().finally(() => {
-          navigate("/oops!");
-        });
-      }, 3000);
-    }
+    const response = jsonData.findIndex((item) => item.id == id);
+    console.log(response);
+    response >= 0
+      ? (() => {
+          setData(jsonData[response]);
+          setLoading(false);
+        })()
+      : setTimeout(() => {
+          animateTransition().finally(() => {
+            navigate("/oops!");
+          });
+        }, 2000);
   };
-
   useEffect(() => {
-    // setLoading(true);
+    setBold(noNavBar);
+  });
+  useEffect(() => {
+    setLoading(true);
     fetchData();
   }, [id]);
 
@@ -63,14 +60,12 @@ const CoffeeDetails = () => {
             ]}
           />
           <div>
-            {/* <HeaderPage/> */}
-            {/* <HeroDetails /> */}
             <div style={bgImage} className="container mx-auto py-4 px-4">
               <div className="grid grid-cols-1 shadow-2xl lg:grid-cols-2 overflow-hidden max-w-7xl mx-auto">
                 <div className="p-2">
                   <img
-                    src={data.image}
-                    alt={data.title}
+                    src={data?.image}
+                    alt={data?.title}
                     className="rounded-md w-[500px] h-[500px]"
                     loading="lazy"
                   />
@@ -81,7 +76,7 @@ const CoffeeDetails = () => {
                       Coffee Bag
                     </span>
                     <h1 className="text-4xl font-bold mt-4 text-gray-800">
-                      {data.title}
+                      {data?.title}
                     </h1>
                     <div className="flex items-center gap-4 mt-2">
                       <span className="line-through text-gray-400 text-sm">
@@ -92,7 +87,7 @@ const CoffeeDetails = () => {
                       </span>
                     </div>
                     <p className="mt-4 text-gray-600 text-lg leading-relaxed">
-                      {data.description}
+                      {data?.description}
                     </p>
                   </div>
                   <div className="flex items-center">
