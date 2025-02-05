@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import CustomLink from "./CustomLink";
-export default function Hero({ name, prevRoute }) {
+export default function Hero({ name, prevRoute, shot }) {
   return (
     <div
       style={{
@@ -13,14 +13,14 @@ export default function Hero({ name, prevRoute }) {
       <div className="">
         <div className="flex flex-col items-center justify-center tracking-widest">
           <h1
-            data-aos="fade-up"
+            data-aos={!shot && "fade-up"}
             className="md:text-6xl text-4xl font-bold leading-5 mb-4 mt-0 text-white uppercase"
           >
             {name}
           </h1>
           <div
-            data-aos="fade-up"
-            data-aos-delay="200"
+            data-aos={!shot && "fade-up"}
+            data-aos-delay={!shot && "200"}
             className="inline-flex lg:mb-12 text-xl font-light"
           >
             {prevRoute ? (
@@ -39,13 +39,24 @@ export default function Hero({ name, prevRoute }) {
               ))
             ) : (
               <>
-                <CustomLink
-                  className="capitalize text-slate-300/95 hover:text-white duration-300"
-                  to={"/"}
-                >
-                  home
-                </CustomLink>
-                <p className="m-0 text-white px-2">/</p>
+                {!shot ? (
+                  <>
+                    <CustomLink
+                      className="capitalize text-slate-300/95 hover:text-white duration-300"
+                      to={"/"}
+                    >
+                      home
+                    </CustomLink>
+                    <p className="m-0 text-white px-2">/</p>
+                  </>
+                ) : (
+                  <>
+                    <div className="capitalize text-slate-300/95 hover:text-white duration-300">
+                      home
+                    </div>
+                    <p className="m-0 text-white px-2">/</p>
+                  </>
+                )}
               </>
             )}
             <p className="m-0 text-white capitalize">{name}</p>
