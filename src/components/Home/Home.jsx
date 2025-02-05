@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Services from "./Servics/Services";
 import Banner from "./Banner/Banner";
 // import CoffeeCup from "./CoffeeCup/CoffeeCup";
@@ -17,11 +17,10 @@ const Home = ({ setBold, noNavBar }) => {
     <>
       <HeroDetails />
       <CoffeeSection />
-      <HeaderPage />
+      {/* <HeaderPage /> */}
       {/* <CoffeeCup /> */}
-
-      <Banner />
       <Services />
+      <Banner />
       <AppSection />
       <Testimonials />
     </>
