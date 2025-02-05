@@ -17,6 +17,7 @@ export default function CustomLink({
 
   function handelClick(e) {
     e.preventDefault();
+    props?.onClick && props.onClick();
     if (to && !to.startsWith("#") && to !== location.pathname) {
       setCurser("default");
       animateTransition().then(() => {
