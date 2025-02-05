@@ -1,7 +1,7 @@
 import { FaCheck } from "react-icons/fa";
 import InputField from "./InputField";
 
-export default function ContactForm() {
+export default function ContactForm({ shot }) {
   return (
     <div className="container my-12">
       <div className="container">
