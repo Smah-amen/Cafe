@@ -1,5 +1,11 @@
-import React from "react";
+import Hero from "../Hero";
+import Components from "./Components";
 
 export default function Templates() {
-  return <div>Templates</div>;
+  return (
+    <>
+      <Hero name={"Templates"} />
+      <Components />
+    </>
+  );
 }
