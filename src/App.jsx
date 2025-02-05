@@ -15,6 +15,7 @@ import CoffeeDetails from "./components/Menu/CoffeeDetails";
 import Transition from "./components/PageTransition/Transition";
 import { revealTransition } from "./components/PageTransition/Animation";
 import Cart from "./components/checkout/Cart";
+import Templates from "./components/Templates/Templates";
 
 const App = () => {
   const location = useLocation();
@@ -38,6 +39,7 @@ const App = () => {
     { noNavBar: false, path: "/about", element: About },
     { noNavBar: false, path: "/contact", element: Contact },
     { noNavBar: false, path: "/cart", element: Cart },
+    { noNavBar: false, path: "/templates", element: Templates },
     { noNavBar: false, path: "/CoffeeDetails/:id", element: CoffeeDetails },
     { noNavBar: true, path: "/login", element: Registration },
     { noNavBar: true, path: "/signup", element: Registration },
