@@ -2,7 +2,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
 
-const HeaderPage = () => {
+const HeaderPage = ({ shot }) => {
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -15,7 +15,7 @@ const HeaderPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2">
           {/* text */}
           <div
-            data-aos="fade-zoom-in"
+            data-aos={!shot && "fade-zoom-in"}
             className="order-1 sm:order-0 flex flex-col justify-center gap-6"
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold ">
@@ -32,12 +32,11 @@ const HeaderPage = () => {
           </div>
           {/* image */}
           <div
-            data-aos="fade-left"
+            data-aos={!shot && "fade-left"}
             className=" min-h-[450px] px-5 overflow-hidden flex justify-center items-center order-0 sm:order-1 relative"
           >
             <img
               src="/coffe3.png"
-            
               alt=""
               className="w-[400px] rounded-full sm:w-[450px] 
             mx-auto spin"
