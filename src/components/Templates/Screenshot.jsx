@@ -13,17 +13,22 @@ const useScreenshot = () => {
       document.body.appendChild(container);
       const root = ReactDOM.createRoot(container);
       root.render(<Component />);
-      setTimeout(async () => {
-        const canvas = await html2canvas(container);
-        const imgData = canvas.toDataURL("image/png");
-        setImages((prev) => ({ ...prev, [key]: imgData }));
-        document.body.removeChild(container);
-        root.unmount();
-        resolve(imgData);
-      }, 500);
+      requestIdleCallback(async () => {
+        try {
+          const canvas = await html2canvas(container);
+          const imgData = canvas.toDataURL("image/png");
+          setImages((prev) => ({ ...prev, [key]: imgData }));
+          resolve(imgData);
+        } catch (error) {
+          console.error("Screenshot failed:", error);
+          resolve(null);
+        } finally {
+          document.body.removeChild(container);
+          root.unmount();
+        }
+      });
     });
   };
-
   return { images, createScreenshot };
 };
 
