@@ -1,46 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
-import useScreenshot from "./Screenshot";
-import Vision from "../About/Vision";
-import ContactForm from "../Contact/ContactForm";
-import HeaderPage from "../Home/Header";
-import Hero from "../Hero";
+import { useContext } from "react";
+import CustomLink from "../CustomLink";
+import { TempsData } from "../../contexts/Temps";
 
 export default function Components() {
-  const { images, createScreenshot } = useScreenshot();
-
-  const [temps, setTemps] = useState([
-    { route: "/about", name: "about", content: <Vision shot={true} /> },
-    {
-      route: "/contact",
-      name: "contact",
-      content: <ContactForm shot={true} />,
-    },
-    {
-      route: "/hero1",
-      name: "hero section 1",
-      content: <HeaderPage shot={true} />,
-    },
-    {
-      route: "/hero2",
-      name: "hero section 2",
-      content: <Hero name={"templates"} shot={true} />,
-    },
-  ]);
-
-  useEffect(() => {
-    const captureScreenshots = async () => {
-      temps.map(
-        async (page) =>
-          (page.screenShot = await createScreenshot(
-            () => page.content,
-            page.name
-          ))
-      );
-    };
-    captureScreenshots();
-  }, []);
-
+  const temps = useContext(TempsData);
   return (
     <div className="container mx-auto py-16 overflow-hidden">
       <div className="">
@@ -58,7 +22,14 @@ export default function Components() {
         </div>
         <div className="flex justify-evenly flex-wrap gap-y-9 gap-5 my-3">
           {temps.map((item, index) => (
-            <div key={index} className="bg-slate-100 rounded-lg p-7 pb-4">
+            <CustomLink
+              key={index}
+              to={{
+                pathname: `/components/${item.route}`,
+                state: { component: item.route, props: item?.props },
+              }}
+              className="bg-slate-100 rounded-lg p-7 pb-4"
+            >
               <div className="w-72 h-60 rounded-xl flex justify-center items-center overflow-hidden">
                 <img
                   src={item?.screenShot}
@@ -68,7 +39,7 @@ export default function Components() {
                 />
               </div>
               <p className="text-center mt-4 capitalize">{item.name}</p>
-            </div>
+            </CustomLink>
           ))}
         </div>
       </div>
