@@ -16,6 +16,8 @@ import Transition from "./components/PageTransition/Transition";
 import { revealTransition } from "./components/PageTransition/Animation";
 import Cart from "./components/checkout/Cart";
 import Templates from "./components/Templates/Templates";
+import SingleComponent from "./components/Templates/SingleComponent";
+import TempsProvider from "./contexts/Temps";
 
 const App = () => {
   const location = useLocation();
@@ -40,6 +42,7 @@ const App = () => {
     { noNavBar: false, path: "/contact", element: Contact },
     { noNavBar: false, path: "/cart", element: Cart },
     { noNavBar: false, path: "/templates", element: Templates },
+    { noNavBar: false, path: "/components/:id", element: SingleComponent },
     { noNavBar: false, path: "/CoffeeDetails/:id", element: CoffeeDetails },
     { noNavBar: true, path: "/login", element: Registration },
     { noNavBar: true, path: "/signup", element: Registration },
@@ -50,17 +53,19 @@ const App = () => {
     <>
       <Transition />
       {!bold && <Navbar />}
-      <Routes>
-        {routes.map((route, index) => (
-          <Route
-            key={index}
-            path={route.path}
-            element={
-              <route.element noNavBar={route.noNavBar} setBold={setBold} />
-            }
-          />
-        ))}
-      </Routes>
+      <TempsProvider>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <route.element noNavBar={route.noNavBar} setBold={setBold} />
+              }
+            />
+          ))}
+        </Routes>
+      </TempsProvider>
       {!bold && <Footer />}
     </>
   );
