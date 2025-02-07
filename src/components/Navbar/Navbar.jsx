@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaCoffee, FaTimes } from "react-icons/fa";
-import { LuMenu } from "react-icons/lu";
+import { LuMenu, LuShoppingCart } from "react-icons/lu";
 
 import CustomLink from "../CustomLink";
 
@@ -12,7 +12,7 @@ const Navbar = () => {
       contentLg: (
         <CustomLink
           to="/"
-          className="font-bold text-xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
+          className="font-bold text-xl sm:text-2xl flex justify-center items-center gap-2 tracking-wider font-cursive"
         >
           <img
             loading="lazy"
@@ -43,7 +43,7 @@ const Navbar = () => {
           <CustomLink
             onClick={() => setIsOpen(false)}
             to="/"
-            className="inline-block text-2xl py-4 px-4 duration-200"
+            className="inline-block text-xl font-medium py-4 px-4 duration-200"
             isActive="text-white/100"
             isNotActive="text-white/70"
           >
@@ -56,7 +56,7 @@ const Navbar = () => {
           <CustomLink
             onClick={() => setIsOpen(false)}
             to="/about"
-            className="inline-block text-2xl py-4 px-4 duration-200"
+            className="inline-block text-xl font-medium py-4 px-4 duration-200"
             isActive="text-white/100"
             isNotActive="text-white/70"
           >
@@ -69,7 +69,7 @@ const Navbar = () => {
           <CustomLink
             onClick={() => setIsOpen(false)}
             to="/menu"
-            className="inline-block text-2xl py-4 px-4 duration-200"
+            className="inline-block text-xl font-medium py-4 px-4 duration-200"
             isActive="text-white/100"
             isNotActive="text-white/70"
           >
@@ -82,7 +82,7 @@ const Navbar = () => {
           <CustomLink
             onClick={() => setIsOpen(false)}
             to="/contact"
-            className="inline-block text-2xl py-4 px-4 duration-200"
+            className="inline-block text-xl font-medium py-4 px-4 duration-200"
             isActive="text-white/100"
             isNotActive="text-white/70"
           >
@@ -95,11 +95,24 @@ const Navbar = () => {
           <CustomLink
             onClick={() => setIsOpen(false)}
             to="/templates"
-            className="inline-block text-2xl py-4 px-4 duration-200"
+            className="inline-block text-xl font-medium py-4 px-4 duration-200"
             isActive="text-white/100"
             isNotActive="text-white/70"
           >
             Templates
+          </CustomLink>
+        ),
+      },
+      {
+        content: (
+          <CustomLink
+            onClick={() => setIsOpen(false)}
+            to="/cart"
+            className="inline-block text-xl font-medium py-4 px-4 duration-200"
+            isActive="text-white/100"
+            isNotActive="text-white/70"
+          >
+            <LuShoppingCart />
           </CustomLink>
         ),
       },
@@ -111,7 +124,7 @@ const Navbar = () => {
             to="/login"
           >
             <button className=" bg-primary/100 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3">
-              Order <FaCoffee className="text-2xl cursor-pointer" />
+              Order <FaCoffee className="text-xl font-medium cursor-pointer" />
             </button>
           </CustomLink>
         ),
