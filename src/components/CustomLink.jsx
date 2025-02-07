@@ -18,10 +18,28 @@ export default function CustomLink({
   function handelClick(e) {
     e.preventDefault();
     props?.onClick && props.onClick();
-    if (to && !to.startsWith("#") && to !== location.pathname) {
+    if (to && !to?.includes("#") && to !== location.pathname) {
       setCurser("default");
       animateTransition().then(() => {
         navigate(to);
+        setCurser("pointer");
+      });
+    }
+  }
+  function handelClickSpecial(e) {
+    e.preventDefault();
+    props?.onClick && props.onClick();
+    if (
+      to &&
+      !to?.pathname?.includes("#") &&
+      to?.pathname !== location.pathname &&
+      to?.state
+    ) {
+      setCurser("default");
+      animateTransition().then(() => {
+        navigate(to.pathname, {
+          state: to.state,
+        });
         setCurser("pointer");
       });
     }
@@ -32,7 +50,9 @@ export default function CustomLink({
       className={
         Active ? className + " " + isActive : className + " " + isNotActive
       }
-      onClick={(e) => handelClick(e)}
+      onClick={(e) =>
+        typeof to === "object" ? handelClickSpecial(e) : handelClick(e)
+      }
       style={{ cursor: curser }}
     >
       {children}
