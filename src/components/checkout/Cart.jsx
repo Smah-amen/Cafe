@@ -9,12 +9,18 @@ import Hero from "../Hero";
 import CustomLink from "../CustomLink";
 import Responsive from "../Home/Testimonials/Testimonials";
 import jsonData from "../Data/Data.json";
+import { useLocation } from "react-router";
 
 const Cart = ({ setBold, noNavBar }) => {
+  const location = useLocation();
   // const { id } = useParams();
   // const navigate = useNavigate();
   const totalPrice = jsonData
-    .filter((item) => [1, 2, 3].includes(item.id))
+    .filter((item) =>
+      location.state == null
+        ? [1, 2, 3].includes(item.id)
+        : item.id == location.state
+    )
     .map((item) => item.price)
     .reduce((prev, total) => prev + total, 0);
   const discount = 0.1;
@@ -45,7 +51,11 @@ const Cart = ({ setBold, noNavBar }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = jsonData.filter((item) => [1, 2, 3].includes(item.id));
+        const response = jsonData.filter((item) =>
+          location.state == null
+            ? [1, 2, 3].includes(item.id)
+            : item.id == location.state
+        );
         setData(response);
         setLoading(false);
       } catch (error) {
