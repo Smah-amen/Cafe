@@ -4,6 +4,7 @@ import { GiCoffeeBeans } from "react-icons/gi";
 import jsonData from "../Data/Data.json";
 import Hero from "../Hero.jsx";
 import { animateTransition } from "../PageTransition/Animation.jsx";
+import CustomLink from "../CustomLink.jsx";
 
 const bgImage = {
   backgroundImage: `url('/back.png')`,
@@ -97,12 +98,16 @@ const CoffeeDetails = ({ setBold, noNavBar }) => {
                       defaultValue="1"
                       className="w-16 px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                     />
+                        {/* <CustomLink to={{ pathname: `/cart`, state: coffee.id }}><CustomLink/> */}
+
+                    <CustomLink to={{ pathname: `/cart`, state: data.id }}  > 
                     <button className="ml-4 bg-primary  text-white px-6 py-2 text-sm rounded-md flex items-center gap-2">
                       Add to Cart
                       <span className="material-icons">
                         <GiCoffeeBeans />
                       </span>
                     </button>
+                    </CustomLink>
                   </div>
                 </div>
               </div>
