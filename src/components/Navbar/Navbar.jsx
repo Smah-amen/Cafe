@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCoffee, FaTimes } from "react-icons/fa";
 import { LuMenu, LuShoppingCart } from "react-icons/lu";
 
@@ -6,6 +6,22 @@ import CustomLink from "../CustomLink";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navLinks = {
     brand: {
@@ -134,7 +150,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-secondary text-white">
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${
+          scrolling ? "bg-secondary shadow-lg" : "bg-transparent"
+        } text-white`}
+      >
+        {" "}
         <div className="container mx-auto py-4 flex items-center justify-between">
           <div className="w-full flex justify-between items-center">
             <div>{navLinks.brand.contentLg}</div>
