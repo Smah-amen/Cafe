@@ -6,7 +6,7 @@ import CustomLink from "./CustomLink";
 import Menu from "./Menu/Menu";
 const HeroDetails = () => {
   return (
-    <div className="relative w-full h-[700px] overflow-hidden">
+    <div className="relative w-full h-dvh overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
         <video
           src={vedio}

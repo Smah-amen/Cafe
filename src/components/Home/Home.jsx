@@ -6,8 +6,8 @@ import Testimonials from "./Testimonials/Testimonials";
 import AppSection from "./AppSection/AppSection";
 import HeroDetails from "../HeroDetails";
 import CoffeeSection from "../CoffeeSection";
-import HeaderPage from "./Header";
-import Services2 from "./Servics/Services2";
+// import HeaderPage from "./Header";
+// import Services2 from "./Servics/Services2";
 
 const Home = ({ setBold, noNavBar }) => {
   useEffect(() => {

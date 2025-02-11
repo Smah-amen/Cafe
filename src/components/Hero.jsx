@@ -6,7 +6,7 @@ export default function Hero({ name, prevRoute, shot }) {
       style={{
         background:
           "linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url('/bg-coffee.jpg')",
-        minHeight: "400px",
+        minHeight: "600px",
       }}
       className="bg-top bg-no-repeat bg-cover overlay-bottom relative flex flex-col items-center justify-center"
     >
