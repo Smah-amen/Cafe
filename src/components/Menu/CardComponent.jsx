@@ -40,12 +40,12 @@ const CardComponent = () => {
           className="relative pt-28 pb-9 text-center after:absolute after:content-start after:w-[2px] after:h-[100px] after:top-0 after:left-[50%] after:ms[1px] after:bg-[#DA9F5B]"
         >
           <h4
-            className="text-primary uppercase text-2xl font-medium mb-2"
+            className="text-primary font-cursive uppercase text-4xl font-medium mb-2"
             style={{ letterSpacing: "3px" }}
           >
             Our Menu & Pricing
           </h4>
-          <h1 className="md:text-5xl text-5xl font-bold mb-4">
+          <h1 className="md:text-5xl font-cursive text-5xl font-bold mb-4">
             Competitive Pricing
           </h1>
         </div>
