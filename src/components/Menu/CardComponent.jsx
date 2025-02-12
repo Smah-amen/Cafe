@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CustomLink from "../CustomLink";
 import jsonData from "../Data/Data.json";
+import CoffeeCup from "../Home/CoffeeCup/CoffeeCup";
 
 const CardComponent = () => {
   const [data, setData] = useState([]);
@@ -48,6 +49,7 @@ const CardComponent = () => {
             Competitive Pricing
           </h1>
         </div>
+        {/* <CoffeeCup/> */}
       </div>
       {loading ? (
         <div className="flex justify-center items-center relative top-0 left-0 h-[50vh] w-fit mx-auto">

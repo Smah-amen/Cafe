@@ -1,6 +1,8 @@
 import CardComponent from "./CardComponent";
 import Hero from "../Hero";
 import { useEffect } from "react";
+import CoffeeCup from "../Home/CoffeeCup/CoffeeCup.jsx";
+
 
 const Menu = ({ setBold, noNavBar }) => {
   useEffect(() => {
@@ -10,6 +12,7 @@ const Menu = ({ setBold, noNavBar }) => {
     <div>
       <Hero name={"Menu"} />
       <CardComponent />
+        <CoffeeCup />
     </div>
   );
 };
