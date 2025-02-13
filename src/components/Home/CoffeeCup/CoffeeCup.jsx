@@ -31,13 +31,13 @@ const CoffeeCup = () => {
   return (
     <div className="flex flex-col items-center  p-6 ">
       {/* Title */}
-      <h1 className="text-2xl font-bold text-gray-800 mb-8">
-        Choose Your Coffee
+      <h1 className="text-5xl font-cursive  text-primary mb-8">
+      Make Every Cup Special
       </h1>
 
       {/* Coffee Cup */}
       <div
-        className="cup relative bg-slate-200 flex justify-center items-end overflow-hidden"
+        className="cup relative font-cursive bg-slate-200 flex justify-center items-end overflow-hidden"
         style={{ borderRadius: "0 0 10vw 10vw" }}
       >
         {/* Coffee Filling */}
@@ -60,9 +60,9 @@ const CoffeeCup = () => {
           <button
             key={coffee.id}
             onClick={() => setSelectedCoffee(coffee.id)}
-            className={`py-2 px-4 border-2 rounded-md text-sm font-medium transition-all duration-300 ${
+            className={`py-2 px-4 border-2 font-cursive rounded-md text-lg font-medium transition-all duration-300 ${
               selectedCoffee === coffee.id
-                ? "bg-white border-brown-500 text-brown-700"
+                ? "bg-white border-amber-900 text-amber-700"
                 : "bg-gray-100 border-gray-300 text-gray-600 hover:bg-gray-200"
             }`}
           >
