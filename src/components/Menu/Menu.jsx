@@ -1,13 +1,14 @@
 import CardComponent from "./CardComponent";
 import Hero from "../Hero";
 import { useEffect } from "react";
+import CoffeeCup from "../Home/CoffeeCup/CoffeeCup.jsx";
 
 const Menu = ({ setBold, noNavBar }) => {
   useEffect(() => {
     setBold(noNavBar);
   });
   return (
-    <div>
+    <div className="mb-5">
       <Hero name={"Menu"} />
       <CardComponent />
     </div>
