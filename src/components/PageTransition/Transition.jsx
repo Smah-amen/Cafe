@@ -2,7 +2,7 @@
 import "./TransitionStyle.css";
 export default function Transition() {
   return (
-    <div className="fixed top-0 left-0 w-[100vw] h-[100vh] flex flex-col z-50 pointer-events-none">
+    <div className="fixed top-0 left-0 w-[100vw] h-[100vh] flex flex-col z-[70] pointer-events-none">
       {[
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5],
