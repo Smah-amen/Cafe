@@ -10,6 +10,7 @@ import CustomLink from "../CustomLink";
 import Responsive from "../Home/Testimonials/Testimonials";
 import jsonData from "../Data/Data.json";
 import { useLocation } from "react-router";
+import TestimonialsCoffee from "../Home/Testimonials/TestimonialsCoffee";
 
 const Cart = ({ setBold, noNavBar }) => {
   const location = useLocation();
@@ -186,7 +187,9 @@ const Cart = ({ setBold, noNavBar }) => {
           </div>
 
           <div className="mt-12">
-            <Responsive />
+            {/* <Responsive /> */}
+            <TestimonialsCoffee />
+
           </div>
         </div>
       </section>

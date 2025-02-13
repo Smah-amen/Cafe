@@ -11,6 +11,7 @@ const Menu = ({ setBold, noNavBar }) => {
     <div className="mb-5">
       <Hero name={"Menu"} />
       <CardComponent />
+        <CoffeeCup />
     </div>
   );
 };
