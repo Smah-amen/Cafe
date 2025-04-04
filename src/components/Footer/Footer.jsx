@@ -1,9 +1,17 @@
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import CustomLink from "../CustomLink";
+import ExplotionContainer from "./ExplotionContainer";
 
 export default function Footer() {
+  const links = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+    { name: "Templates", href: "/templates" },
+  ];
   return (
     <footer
-      className="min-h-[400px] text-white"
+      className="min-h-[400px] text-white overflow-hidden relative"
       style={{
         backgroundImage: "url('/coffee-footer-68P4qxM0.jpg')",
         backgroundPosition: "center",
@@ -39,76 +47,35 @@ export default function Footer() {
                 Footer Links
               </p>
               <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    Blog
-                  </a>
-                </li>
+                {links.map((link, index) => (
+                  <li key={index}>
+                    <CustomLink
+                      to={link.href}
+                      className="inline-block hover:scale-105 duration-200"
+                      isActive="font-bold"
+                      isNotActive="font-normal"
+                    >
+                      {link.name}
+                    </CustomLink>
+                  </li>
+                ))}
               </ul>
             </div>
-
             <div className="py-8 px-4">
               <p className="text-xl font-bold text-white mb-3">Quick Links</p>
               <ul className="flex flex-col items-start gap-3 text-white font-semibold">
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="inline-block hover:scale-105 duration-200"
-                  >
-                    Blog
-                  </a>
-                </li>
+                {links.map((link, index) => (
+                  <li key={index}>
+                    <CustomLink
+                      to={link.href}
+                      className="inline-block hover:scale-105 duration-200"
+                      isActive="font-bold"
+                      isNotActive="font-normal"
+                    >
+                      {link.name}
+                    </CustomLink>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="py-8 px-4">
@@ -148,6 +115,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <ExplotionContainer />
     </footer>
   );
 }
