@@ -1,0 +1,11 @@
+.explotion-particle {
+  position: absolute;
+  width: 150px;
+  bottom: -200px;
+  height: auto;
+  left: 50%;
+  object-fit: cover;
+  transform: translateX(-50%);
+  will-change: transform;
+  z-index: 9999;
+}
