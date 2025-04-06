@@ -7,6 +7,7 @@ import HeaderPage from "../components/Home/Header";
 import Hero from "../components/Hero";
 import CuffeeCup from "../components/Home/CoffeeCup/CoffeeCup";
 import useScreenshot from "../components/Templates/Screenshot";
+import Footer from "../components/Footer/Footer";
 
 export const TempsData = createContext();
 export default function TempsProvider({ children }) {
@@ -37,6 +38,12 @@ export default function TempsProvider({ children }) {
       name: "coffee components",
       screenShot: "",
       content: CuffeeCup,
+    },
+    {
+      route: "footer",
+      name: "footer",
+      screenShot: "",
+      content: Footer,
     },
   ]);
   useEffect(() => {

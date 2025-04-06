@@ -67,13 +67,15 @@ const CardComponent = () => {
               <CustomLink
                 key={item.id}
                 to={`/CoffeeDetails/${item.id}`}
-                className="flex items-center cursor-pointer bg-white p-4 hover:drop-shadow-2xl rounded-lg w-full max-w-[90%] sm:max-w-full md:max-w-[70%] mx-auto"
+                className="flex items-center cursor-pointer bg-white p-4 hover:drop-shadow-2xl rounded-lg"
               >
-                <div data-aos="fade-right">
+                <div
+                className="w-20 h-20"
+                 data-aos="fade-right">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-20 h-20 object-cover rounded-full"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
 
@@ -87,8 +89,8 @@ const CardComponent = () => {
                 </div>
 
                 <div data-aos="fade-left">
-                  <span className="text-orange-500 font-bold text-3xl mx-4">
-                    30$
+                  <span className="text-primary/85 font-bold text-2xl mx-4">
+                  {item.price}$
                   </span>
                 </div>
               </CustomLink>
@@ -104,7 +106,7 @@ const CardComponent = () => {
                   currentPage === index + 1
                     ? "bg-primary text-white"
                     : "bg-gray-300"
-                } rounded`}
+                } rounded-full`}
               >
                 {index + 1}
               </button>
