@@ -1,6 +1,8 @@
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import useScreenshot from "../Templates/Screenshot";
 
-export default function Footer() {
+export default function Footer({shot}) {
+  const {images, createScreenshot } = useScreenshot()
   return (
     <footer
       className="min-h-[400px] text-white"

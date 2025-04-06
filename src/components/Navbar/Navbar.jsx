@@ -155,7 +155,7 @@ const Navbar = () => {
           scrolling ? "bg-secondary shadow-lg" : "bg-transparent"
         } text-white`}
       >
-        {" "}
+       
         <div className="container mx-auto py-4 flex items-center justify-between">
           <div className="w-full flex justify-between items-center">
             <div>{navLinks.brand.contentLg}</div>
