@@ -18,7 +18,7 @@ export default function ExplotionContainer() {
   const imgParticlesCount = 20;
   const imgPaths = Array.from(
     { length: imgParticlesCount },
-    (_, i) => `/footer/footer${i}.jpg`
+    (_, i) => `/footer/footer${i}.png`
   );
 
   class Particle {
