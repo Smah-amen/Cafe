@@ -13,7 +13,7 @@ export default function Footer() {
     <footer
       className="min-h-[400px] text-white overflow-hidden relative"
       style={{
-        backgroundImage: "url('/coffee-footer-68P4qxM0.jpg')",
+        backgroundImage: "url('/bg-footer.jpg')",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
