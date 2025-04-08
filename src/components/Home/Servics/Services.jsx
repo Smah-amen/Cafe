@@ -59,7 +59,7 @@ const Services = () => {
                 data-aos-delay={index * 100}
                 className="max-w-[420px] border-4 border-slate-100 shadow-md rounded-xl bg-white overflow-hidden group"
               >
-                <div className="absolute top-2 left-2 duration-300 z-10 bg-green-600 text-white text-sm font-bold px-2 py-1 rounded-full">
+                <div className="absolute top-2 left-2 duration-300 z-10 bg-[#317048] text-white text-sm font-bold px-2 py-1 rounded-full">
                   50% off - $2.50
                 </div>
                 <div className="h-[350px] overflow-hidden">
@@ -82,12 +82,12 @@ const Services = () => {
                   </p>
                   <div className="flex justify-start gap-3 items-start">
                     <CustomLink to={{ pathname: `/cart`, state: coffee.id }}>
-                      <button className="bg-primary text-white px-4 py-2 rounded-full">
-                        Order Now
+                    <button class="border-2 border-amber-700 text-amber-700 hover:text-base  font-semibold py-2 px-5 rounded-xl transition hover:scale-105 duration-300">
+                    Order Now
                       </button>
                     </CustomLink>
                     <CustomLink to={`/coffeeDetails/${coffee.id} `}>
-                      <button className="bg-primary text-white px-4 py-2 rounded-full">
+                      <button className="bg-primary border hover:border-amber-700 hover:text-amber-700 hover:bg-white text-white px-4 py-2 rounded-lg hover:scale-105 duration-200">
                         Details
                       </button>
                     </CustomLink>
