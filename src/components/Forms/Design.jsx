@@ -2,6 +2,8 @@ import { IoHome } from "react-icons/io5";
 import CustomLink from "../CustomLink";
 
 export default function Design() {
+
+  
   return {
     default: {
       name: "default",
@@ -21,12 +23,13 @@ export default function Design() {
             <div className="flex flex-wrap -mx-4 items-center">
               <div className="relative px-4 w-full" style={{ flex: "1 1 50%" }}>
                 <div className="text-center p-12">
-                  <form className="mb-12">
+                  <form  className="mb-12">
                     <h1
                       data-aos="fade-up"
                       data-aos-delay="300"
                       data-aos-duration="1300"
                       className="text-white mb-9 mt-12 font-medium text-4xl capitalize"
+                      
                     >
                       {props.type}
                     </h1>
