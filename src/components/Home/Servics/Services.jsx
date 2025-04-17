@@ -82,8 +82,8 @@ const Services = () => {
                   </p>
                   <div className="flex justify-start gap-3 items-start">
                     <CustomLink to={{ pathname: `/cart`, state: coffee.id }}>
-                    <button class="border-2 border-amber-700 text-amber-700 hover:text-base  font-semibold py-2 px-5 rounded-xl transition hover:scale-105 duration-300">
-                    Order Now
+                      <button className="border-2 border-amber-700 text-amber-700 hover:text-base  font-semibold py-2 px-5 rounded-xl transition hover:scale-105 duration-300">
+                        Order Now
                       </button>
                     </CustomLink>
                     <CustomLink to={`/coffeeDetails/${coffee.id} `}>

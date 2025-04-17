@@ -21,7 +21,7 @@ export default function Design() {
             <div className="flex flex-wrap -mx-4 items-center">
               <div className="relative px-4 w-full" style={{ flex: "1 1 50%" }}>
                 <div className="text-center p-12">
-                  <form className="mb-12">
+                  <form className="mb-12" onSubmit={(e) => props.validation(e)}>
                     <h1
                       data-aos="fade-up"
                       data-aos-delay="300"
@@ -59,6 +59,7 @@ export default function Design() {
         <form
           data-aos="fade-up"
           data-aos-duration="1300"
+          onSubmit={(e) => props.validation(e)}
           className="modern-login mx-auto my-16 overflow-hidden bg-slate-200 p-[30px] rounded-xl pt-7 relative transform w-full lg:w-2/3 transition-all duration-300 before:content-[''] before:absolute before:-z-10 after:bg-primary/65 before:bg-[#DA9F5B] before:w-[750px] before:h-[700px] before:left-[55%] before:-top-[10px] after:w-[750px] after:h-[700px] after:left-[45%] after:-top-[5px] after:content-[''] after:absolute after:animate-[spin_7s_infinite] before:animate-[spin_6s_infinite_linear] after:-z-10"
         >
           <div className="flex items-center justify-between">
