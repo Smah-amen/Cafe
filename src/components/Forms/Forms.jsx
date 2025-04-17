@@ -1,10 +1,44 @@
 /* eslint-disable react/prop-types */
 import "./forms.css";
 import CustomLink from "../CustomLink";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Forms({ type, items, design }) {
   const [errorObj, setErrorObj] = useState([]);
+  const [value, setValue] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  useEffect(() => {
+    if (type === "login") {
+      const errors = {};
+
+      items.forEach((item) => {
+        const val = value[item.name];
+
+        if (item.type === "email") {
+          if (val.length === 0) {
+            errors[item.name] = "Email is required";
+        
+          }
+          if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(val)) {
+            errors[item.name] = "Email is invalid";
+          }
+        }
+
+        if (item.type === "password") {
+          if (val.length === 0) {
+            errors[item.name] = "Password is required";}}
+         
+      });
+
+      setErrorObj(errors);
+    }
+  }, [value, type, items]);
+
   function errorHandler(error) {
     setErrorObj((prev) => [...prev, error]);
   }
@@ -80,44 +114,44 @@ export default function Forms({ type, items, design }) {
         }
       });
     }
-    // Login Validation
-    if (type === "login") {
-      inputs.forEach((input) => {
-        switch (input.type) {
-          case "email":
-            if (
-              !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(
-                input.value
-              )
-            ) {
-              console.log("Email is invalid.");
-            }
-            break;
-          case "password":
-            if (input.name === "password") {
-              if (!/[a-z]/g.test(input.value)) {
-                console.log("At least one lowercase letter");
-              }
-              if (!/[A-Z]/g.test(input.value)) {
-                console.log("At least one uppercase letter");
-              }
-              if (!/\d/g.test(input.value)) {
-                console.log("At least one digit");
-              }
-              if (!/[@$!%*?&]/g.test(input.value)) {
-                console.log("At least one special character (@$!%*?&)");
-              }
-              if (!/^.{8,}$/g.test(input.value)) {
-                console.log("Minimum 8 characters");
-              }
-            }
-            break;
-          default:
-            // Handle default case if needed
-            break;
-        }
-      });
-    }
+    // Login validation
+    // if (type === "login") {
+    //   inputs.forEach((input) => {
+    //     switch (input.type) {
+    //       case "email":
+    //         if (
+    //           !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(
+    //             input.value
+    //           )
+    //         ) {
+    //           console.log("Email is invalid.");
+    //         }
+    //         break;
+    //       case "password":
+    //         if (input.name === "password") {
+    //           if (!/[a-z]/g.test(input.value)) {
+    //             console.log("At least one lowercase letter");
+    //           }
+    //           if (!/[A-Z]/g.test(input.value)) {
+    //             console.log("At least one uppercase letter");
+    //           }
+    //           if (!/\d/g.test(input.value)) {
+    //             console.log("At least one digit");
+    //           }
+    //           if (!/[@$!%*?&]/g.test(input.value)) {
+    //             console.log("At least one special character (@$!%*?&)");
+    //           }
+    //           if (!/^.{8,}$/g.test(input.value)) {
+    //             console.log("Minimum 8 characters");
+    //           }
+    //         }
+    //         break;
+    //       default:
+    //         // Handle default case if needed
+    //         break;
+    //     }
+    //   });
+    // }
 
     if (errorObj.length > 0) {
       console.log("SignUp or LogIn based on the type (LogIn or SignUp)");
@@ -142,9 +176,19 @@ export default function Forms({ type, items, design }) {
                 className={design?.inputField?.input}
                 placeholder={item?.placeholder}
                 style={design?.inputField?.inputStyle}
-                required="required"
-                name={item?.label.toLowerCase()}
+                required
+                name={item?.name}
+                value={value[item.name]}
+                onChange={(e) => {
+                  setValue({ ...value, [item.name]: e.target.value });
+                }}
               />
+              {errorObj[item.name] && (
+                <div className="w-full text-start">
+                  <span className="text-red-500">{errorObj[item.name]}</span>
+                </div>
+              )}
+
               {design.name !== "default" && (
                 <span className={design?.inputField?.label}>{item.label}</span>
               )}
