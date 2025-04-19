@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Forms({ type, items, design }) {
   const [errorObj, setErrorObj] = useState([]);
+  const [isValid, setIsValid] = useState(false);
   const [value, setValue] = useState({
     name: "",
     email: "",
@@ -22,17 +23,31 @@ export default function Forms({ type, items, design }) {
         if (item.type === "email") {
           if (val.length === 0) {
             errors[item.name] = "Email is required";
-        
-          }
-          if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(val)) {
+          }else if (
+            !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(val)
+          ) {
             errors[item.name] = "Email is invalid";
           }
+         
         }
 
         if (item.type === "password") {
           if (val.length === 0) {
-            errors[item.name] = "Password is required";}}
-         
+            errors[item.name] = "Password is required";
+          }else if (val.length < 8) {
+            errors[item.name] = "Password must be at least 8 characters";
+          }else if (!/[a-z]/g.test(val)) {
+            errors[item.name] = "At least one lowercase letter";
+
+        }else if (!/[A-Z]/g.test(val)) {
+            errors[item.name] = "At least one uppercase letter";
+          } else if (!/\d/g.test(val)) {
+            errors[item.name] = "At least one digit";
+          }else if (!/[@$!%*?&]/g.test(val)) {
+            errors[item.name] = "At least one special character (@$!%*?&)";
+          }
+
+        }
       });
 
       setErrorObj(errors);
@@ -182,12 +197,15 @@ export default function Forms({ type, items, design }) {
                 onChange={(e) => {
                   setValue({ ...value, [item.name]: e.target.value });
                 }}
+                onBlur={() => {
+                  setIsValid((prev) => ({ ...prev, [item.name]: true }));
+                }}
               />
-              {errorObj[item.name] && (
+              {isValid[item.name] && errorObj[item.name] !== 0 ? (
                 <div className="w-full text-start">
-                  <span className="text-red-500">{errorObj[item.name]}</span>
+                  <span className="text-red-300 italic">{errorObj[item.name]}</span>
                 </div>
-              )}
+              ) : null}
 
               {design.name !== "default" && (
                 <span className={design?.inputField?.label}>{item.label}</span>
