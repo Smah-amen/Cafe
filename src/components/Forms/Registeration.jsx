@@ -2,6 +2,12 @@ import { useLocation } from "react-router";
 import Forms from "./Forms";
 import Design from "./Design";
 import { useEffect } from "react";
+import {
+  valConfermPassword,
+  valEmail,
+  valName,
+  valPassword,
+} from "./FormValidation";
 
 export default function Registeration({ setBold, noNavBar }) {
   const location = useLocation().pathname.split("/")[1];
@@ -16,24 +22,28 @@ export default function Registeration({ setBold, noNavBar }) {
       label: "Name",
       type: "text",
       placeholder: "Enter your name",
+      validationFunction: valName,
     },
     {
       name: "email",
       label: "Email",
       type: "email",
       placeholder: "Enter your email",
+      validationFunction: valEmail,
     },
     {
       name: "password",
       label: "Password",
       type: "password",
       placeholder: "Enter your password",
+      validationFunction: valPassword,
     },
     {
       name: "confirmPassword",
       label: "Confirm Password",
       type: "password",
       placeholder: "Confirm your password",
+      validationFunction: valConfermPassword,
     },
   ];
 
@@ -43,12 +53,14 @@ export default function Registeration({ setBold, noNavBar }) {
       label: "Email",
       type: "email",
       placeholder: "Enter your email",
+      validationFunction: valEmail,
     },
     {
       name: "password",
       label: "Password",
       type: "password",
       placeholder: "Enter your password",
+      validationFunction: valPassword,
     },
   ];
 

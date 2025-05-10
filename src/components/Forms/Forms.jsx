@@ -2,10 +2,16 @@
 import "./forms.css";
 import CustomLink from "../CustomLink";
 import { useEffect, useState } from "react";
+import {
+  valConfermPassword,
+  valEmail,
+  valName,
+  valPassword,
+} from "./FormValidation";
 
 export default function Forms({ type, items, design }) {
   const [errorObj, setErrorObj] = useState([]);
-  const [isValid, setIsValid] = useState(false);
+  // const [isValid, setIsValid] = useState(false);
   const [value, setValue] = useState({
     name: "",
     email: "",
@@ -13,46 +19,48 @@ export default function Forms({ type, items, design }) {
     confirmPassword: "",
   });
 
-  useEffect(() => {
-    if (type === "login") {
-      const errors = {};
+  // useEffect(() => {
+  //   if (type === "login") {
+  //     const errors = {};
 
-      items.forEach((item) => {
-        const val = value[item.name];
+  //     items.forEach((item) => {
+  //       const val = value[item.name];
 
-        if (item.type === "email") {
-          if (val.length === 0) {
-            errors[item.name] = "Email is required";
-          }else if (
-            !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(val)
-          ) {
-            errors[item.name] = "Email is invalid";
-          }
-         
-        }
+  //       if (item.type === "email") {
+  //         if (val.length === 0) {
+  //           errors[item.name] = "Email is required";
+  //         } else if (
+  //           !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(val)
+  //         ) {
+  //           errors[item.name] = "Email is invalid";
+  //         }
+  //       }
 
-        if (item.type === "password") {
-          if (val.length === 0) {
-            errors[item.name] = "Password is required";
-          }else if (val.length < 8) {
-            errors[item.name] = "Password must be at least 8 characters";
-          }else if (!/[a-z]/g.test(val)) {
-            errors[item.name] = "At least one lowercase letter";
+  //       if (item.type === "password") {
+  //         if (val.length === 0) {
+  //           errors[item.name] = "Password is required";
+  //         } else if (val.length < 8) {
+  //           errors[item.name] = "Password must be at least 8 characters";
+  //         } else if (!/[a-z]/g.test(val)) {
+  //           errors[item.name] = "At least one lowercase letter";
+  //         } else if (!/[A-Z]/g.test(val)) {
+  //           errors[item.name] = "At least one uppercase letter";
+  //         } else if (!/\d/g.test(val)) {
+  //           errors[item.name] = "At least one digit";
+  //         } else if (!/[@$!%*?&]/g.test(val)) {
+  //           errors[item.name] = "At least one special character (@$!%*?&)";
+  //         }
+  //       }
+  //     });
+  //     setErrorObj(errors);
+  //   }
+  // }, [value, type, items]);
 
-        }else if (!/[A-Z]/g.test(val)) {
-            errors[item.name] = "At least one uppercase letter";
-          } else if (!/\d/g.test(val)) {
-            errors[item.name] = "At least one digit";
-          }else if (!/[@$!%*?&]/g.test(val)) {
-            errors[item.name] = "At least one special character (@$!%*?&)";
-          }
-
-        }
-      });
-
-      setErrorObj(errors);
-    }
-  }, [value, type, items]);
+  function removeErrors(errorName) {
+    setErrorObj((prev) => [
+      ...prev.filter((item) => Object.keys(item)[0] !== errorName),
+    ]);
+  }
 
   function errorHandler(error) {
     setErrorObj((prev) => [...prev, error]);
@@ -68,59 +76,22 @@ export default function Forms({ type, items, design }) {
       inputs.forEach((input) => {
         switch (input.type) {
           case "text":
-            if (!/^[a-zA-Z_]+$/g.test(input.value)) {
-              errorHandler({ [input.name]: "Name must contain only letters." });
-              console.log("Name must contain only letters.");
-            }
-            if (!/^.{3,20}$/g.test(input.value)) {
-              errorHandler({
-                [input.name]:
-                  "Name must be more than 3 characters long and less than 20 characters long.",
-              });
-              console.log(
-                "Name must be more than 3 characters long and less than 20 characters long."
-              );
-            }
+            valName(input.value, input.name, errorHandler, removeErrors);
             break;
           case "email":
-            if (
-              !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(
-                input.value
-              )
-            ) {
-              errorHandler({ [input.name]: "Email is invalid." });
-              console.log("Email is invalid.");
-            }
+            valEmail(input.value, input.name, errorHandler, removeErrors);
             break;
           case "password":
             if (input.name === "password") {
-              if (!/[a-z]/g.test(input.value)) {
-                errorHandler({ [input.name]: "At least one lowercase letter" });
-                console.log("At least one lowercase letter");
-              }
-              if (!/[A-Z]/g.test(input.value)) {
-                errorHandler({ [input.name]: "At least one uppercase letter" });
-                console.log("At least one uppercase letter");
-              }
-              if (!/\d/g.test(input.value)) {
-                errorHandler({ [input.name]: "At least one digit" });
-                console.log("At least one digit");
-              }
-              if (!/[@$!%*?&]/g.test(input.value)) {
-                errorHandler({
-                  [input.name]: "At least one special character (@$!%*?&)",
-                });
-                console.log("At least one special character (@$!%*?&)");
-              }
-              if (!/^.{8,}$/g.test(input.value)) {
-                errorHandler({ [input.name]: "Minimum 8 characters" });
-                console.log("Minimum 8 characters");
-              }
+              valPassword(input.value, input.name, errorHandler, removeErrors);
             } else {
-              if (input.value !== e.target.password.value) {
-                errorHandler({ [input.name]: "Passwords do not match." });
-                console.log("Passwords do not match.");
-              }
+              valConfermPassword(
+                input.value,
+                e.target.password.value,
+                input.name,
+                errorHandler,
+                removeErrors
+              );
             }
             break;
           default:
@@ -130,50 +101,29 @@ export default function Forms({ type, items, design }) {
       });
     }
     // Login validation
-    // if (type === "login") {
-    //   inputs.forEach((input) => {
-    //     switch (input.type) {
-    //       case "email":
-    //         if (
-    //           !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g.test(
-    //             input.value
-    //           )
-    //         ) {
-    //           console.log("Email is invalid.");
-    //         }
-    //         break;
-    //       case "password":
-    //         if (input.name === "password") {
-    //           if (!/[a-z]/g.test(input.value)) {
-    //             console.log("At least one lowercase letter");
-    //           }
-    //           if (!/[A-Z]/g.test(input.value)) {
-    //             console.log("At least one uppercase letter");
-    //           }
-    //           if (!/\d/g.test(input.value)) {
-    //             console.log("At least one digit");
-    //           }
-    //           if (!/[@$!%*?&]/g.test(input.value)) {
-    //             console.log("At least one special character (@$!%*?&)");
-    //           }
-    //           if (!/^.{8,}$/g.test(input.value)) {
-    //             console.log("Minimum 8 characters");
-    //           }
-    //         }
-    //         break;
-    //       default:
-    //         // Handle default case if needed
-    //         break;
-    //     }
-    //   });
-    // }
+    if (type === "login") {
+      inputs.forEach((input) => {
+        switch (input.type) {
+          case "email":
+            valEmail(input.value, input.name, errorHandler, removeErrors);
+            break;
+          case "password":
+            valPassword(input.value, input.name, errorHandler, removeErrors);
+            break;
+          default:
+            // Handle default case if needed
+            break;
+        }
+      });
+    }
 
     if (errorObj.length > 0) {
       console.log("SignUp or LogIn based on the type (LogIn or SignUp)");
     }
+    console.log("Sending Data");
   }
-
   console.log(errorObj);
+
   return (
     <>
       {type === "login" ? (
@@ -186,6 +136,15 @@ export default function Forms({ type, items, design }) {
               data-aos-duration={1100 + (index + 1)}
               className={design?.inputField?.container}
             >
+              {design.name === "modern" &&
+                errorObj.length !== 0 &&
+                errorObj
+                  .filter((err) => Object.keys(err).includes(item.name))
+                  .map((err, index) => (
+                    <div key={index} className="w-full text-start">
+                      <span className="text-red-500">{err[item.name]}</span>
+                    </div>
+                  ))}
               <input
                 type={item?.type}
                 className={design?.inputField?.input}
@@ -197,15 +156,26 @@ export default function Forms({ type, items, design }) {
                 onChange={(e) => {
                   setValue({ ...value, [item.name]: e.target.value });
                 }}
-                onBlur={() => {
-                  setIsValid((prev) => ({ ...prev, [item.name]: true }));
+                onBlur={(e) => {
+                  item.validationFunction(
+                    e.target.value,
+                    item.name,
+                    errorHandler,
+                    removeErrors
+                  );
                 }}
               />
-              {isValid[item.name] && errorObj[item.name] !== 0 ? (
-                <div className="w-full text-start">
-                  <span className="text-red-300 italic">{errorObj[item.name]}</span>
-                </div>
-              ) : null}
+              {design.name === "default" &&
+                errorObj.length !== 0 &&
+                errorObj
+                  .filter((err) => Object.keys(err).includes(item.name))
+                  .map((err, index) => (
+                    <div key={index} className="w-full text-start">
+                      <span className="text-red-300 italic">
+                        {err[item.name]}
+                      </span>
+                    </div>
+                  ))}
 
               {design.name !== "default" && (
                 <span className={design?.inputField?.label}>{item.label}</span>
@@ -266,14 +236,10 @@ export default function Forms({ type, items, design }) {
               {design.name === "modern" &&
                 errorObj.length !== 0 &&
                 errorObj
-                  .filter((err) =>
-                    Object.keys(err).includes(item.label.toLowerCase())
-                  )
+                  .filter((err) => Object.keys(err).includes(item.name))
                   .map((err, index) => (
                     <div key={index} className="w-full text-start">
-                      <span className="text-red-500">
-                        {err[item.label.toLowerCase()]}
-                      </span>
+                      <span className="text-red-500">{err[item.name]}</span>
                     </div>
                   ))}
               <input
@@ -283,18 +249,27 @@ export default function Forms({ type, items, design }) {
                 style={design?.inputField?.inputStyle}
                 name={item?.label.toLowerCase()}
                 required
+                value={value[item.name]}
+                onChange={(e) => {
+                  setValue({ ...value, [item.name]: e.target.value });
+                }}
+                onBlur={(e) => {
+                  item.validationFunction(
+                    e.target.value,
+                    item.name,
+                    errorHandler,
+                    removeErrors,
+                    item.name == "confirmPassword" && value["password"]
+                  );
+                }}
               />
               {design.name === "default" &&
                 errorObj.length !== 0 &&
                 errorObj
-                  .filter((err) =>
-                    Object.keys(err).includes(item.label.toLowerCase())
-                  )
+                  .filter((err) => Object.keys(err).includes(item.name))
                   .map((err, index) => (
                     <div key={index} className="w-full text-start">
-                      <span className="text-red-500">
-                        {err[item.label.toLowerCase()]}
-                      </span>
+                      <span className="text-red-500">{err[item.name]}</span>
                     </div>
                   ))}
               {design.name !== "default" && (
@@ -336,68 +311,3 @@ export default function Forms({ type, items, design }) {
     </>
   );
 }
-
-// return (
-//   <>
-//     {type === "login" ? (
-//       <form className={design.form}>
-//         <div className={design.header.container}>
-//           <div className={design.header.title}>{type}</div>
-//           <Link to={"/"}>
-//             <IoHome className={design.header.link} />
-//           </Link>
-//         </div>
-//         {items.map((item, index) => (
-//           <div key={index} className={design.inputField.container}>
-//             <input
-//               placeholder={item.placeholder}
-//               className={design.inputField.input}
-//               type={item.type}
-//             />
-//             <span className={design.inputField.label}>{item.label}</span>
-//           </div>
-//         ))}
-//         <div className={design.navigation.container}>
-//           <button className={design.navigation.button}>Login</button>
-//           <div className={design.navigation.anotherOtion.text}>
-//             Don&apos;t have an account,{" "}
-//             <Link
-//               className={design.navigation.anotherOtion.link}
-//               to={"/signup"}
-//             >
-//               Sign up
-//             </Link>
-//           </div>
-//         </div>
-//       </form>
-//     ) : (
-//       <form className={design.form}>
-//         <div className={design.header.container}>
-//           <div className={design.header.title}>create account</div>
-//           <Link to={"/"}>
-//             <IoHome className={design.header.link} />
-//           </Link>
-//         </div>
-//         {items.map((item, index) => (
-//           <div key={index} className={design.inputField.container}>
-//             <input
-//               placeholder={item.placeholder}
-//               className={design.inputField.input}
-//               type={item.type}
-//             />
-//             <span className={design.inputField.label}>{item.label}</span>
-//           </div>
-//         ))}
-//         <div className={design.navigation.container}>
-//           <button className={design.navigation.button}>sign up</button>
-//           <div className={design.navigation.anotherOtion.text}>
-//             Already have an account,{" "}
-//             <Link className={design.navigation.anotherOtion.link} to={"/login"}>
-//               login
-//             </Link>
-//           </div>
-//         </div>
-//       </form>
-//     )}
-//   </>
-// );
